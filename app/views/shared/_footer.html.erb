@@ -1,8 +1,17 @@
-<div class="footer">
-<!--   <i class="fas fa-home"></i>
-  <i class="fas fa-search"></i>
-  <i class="fas fa-user"></i> -->
-  <%= link_to '<i class="fas fa-home"></i>'.html_safe, root_path %>
-  <%= link_to '<i class="fas fa-search"></i>'.html_safe, root_path %>
-  <%= link_to '<i class="fas fa-user"></i>'.html_safe, root_path %>
+<div class='footer'>
+  <div class='home'>
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
+    <%end %>
+  </div>
+  <div class='search'>
+    <%= link_to root_path do %>
+      <i class="fas fa-search"></i>
+    <%end %>
+  </div>
+  <div class='profile'>
+    <%= link_to root_path do %>
+      <i class="far fa-user"></i>
+    <%end %>
+  </div>
 </div>
