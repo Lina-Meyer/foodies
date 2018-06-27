@@ -4,7 +4,6 @@ $tab-height: 35px;
 $tab-border-radius: 35px;
 
 body{
-  background: rgba($blue, 0.07);
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -28,7 +27,6 @@ h2{
   width: 100%;
   float: left;
   margin-bottom: 4%;
-  margin-top:4%;
   display:flex;
   justify-content:center;
 }
@@ -40,6 +38,7 @@ h2{
   list-style: none;
   position: relative;
   border-radius: $tab-border-radius;
+  border: 0.5px solid $red;
   overflow: hidden;
   background: #fff;
   height: $tab-height;
