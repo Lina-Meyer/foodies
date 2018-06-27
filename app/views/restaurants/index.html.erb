@@ -5,8 +5,11 @@
         <% @restaurants.each do |restaurant| %>
           <h4><%= restaurant.name %></h4>
           <p><%= restaurant.city %></p>
-          <% restaurant.users.each do |r| %>
-            <p><%= r.email %></p>
+          <% restaurant.users.each do |user| %>
+            <p><%= user.email %></p>
+            <div class="picture">
+              <%= cl_image_tag user.photo_url, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+            </div>
           <% end %>
         <% end %>
       </div>
