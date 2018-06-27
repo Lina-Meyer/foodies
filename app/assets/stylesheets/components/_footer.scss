@@ -1,0 +1,25 @@
+.footer {
+  box-shadow: 0 -1px -5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid $red;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: $light-gray;
+    i {
+      color: gray;
+    }
+    i:hover {
+      color: $red;
+    }
+    i:active {
+      color: $red;
+    }
+  }
+

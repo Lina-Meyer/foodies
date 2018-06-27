@@ -1,18 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <div id="restaurants">
-        <% @restaurants.each do |restaurant| %>
-          <h4><%= restaurant.name %></h4>
-          <p><%= restaurant.city %></p>
-          <% restaurant.users.each do |user| %>
-            <p><%= user.email %></p>
-            <div class="picture">
-              <%= cl_image_tag user.photo_url, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
-            </div>
-          <% end %>
-        <% end %>
+
+  <div class="tab-slider--nav">
+    <ul class="tab-slider--tabs">
+      <li class="tab-slider--trigger active" rel="tab1">Tab 1</li>
+      <li class="tab-slider--trigger" rel="tab2">Tab 2</li>
+    </ul>
+  </div>
+  <div class="tab-slider--container">
+    <div id="tab1" class="tab-slider--body">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div id="restaurants">
+            <% @restaurants.each do |restaurant| %>
+              <h4><%= restaurant.name %></h4>
+              <p><%= restaurant.city %></p>
+              <% restaurant.users.each do |user| %>
+                <p><%= user.email %></p>
+                <%= cl_image_tag user.photo_url, width: 150, height: 150, crop: :thumb, gravity: :face, class:"avatar"   %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
+    <div id="tab2" class="tab-slider--body">
+      <h2>Second Tab</h2>
+      <p>Google Maps</p>
+    </div>
   </div>
-</div>
+
+<!--  -->
