@@ -1,0 +1,9 @@
+<h1>This is the homepage! </h1>
+
+<%= form_tag restaurants_path, method: :get do %>
+  <%= text_field_tag :city,
+    params[:city],
+    class: "form-control",
+    placeholder: "Search for city or friend"
+  %>
+<% end %>

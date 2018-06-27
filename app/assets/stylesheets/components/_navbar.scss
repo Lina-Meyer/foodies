@@ -1,13 +1,19 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: $red;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  h1{
+    color:white;
+    font-size:30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 /* Logo */
@@ -32,7 +38,6 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar link */
