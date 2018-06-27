@@ -1,9 +1,32 @@
-<h1>This is the homepage! </h1>
+<div class="wrapper">
+  <div class="search-home">
+    <%= form_tag restaurants_path, method: :get do %>
+      <%= text_field_tag :city,
+        params[:city],
+        class: "form-control",
+        placeholder: "Search for city or friend"
+      %>
+    <% end %>
+  </div>
 
-<%= form_tag restaurants_path, method: :get do %>
-  <%= text_field_tag :city,
-    params[:city],
-    class: "form-control",
-    placeholder: "Search for city or friend"
-  %>
-<% end %>
+  <h1>Most popular cities</h1>
+  <div class="slideshow-container">
+    <div class="mySlides1">
+      <%= image_tag "munich.jpg", class:"intro-image" %>
+    </div>
+
+    <div class="mySlides1">
+      <%= image_tag "barcelona.png", class:"intro-image" %>
+    </div>
+
+    <div class="mySlides1">
+      <%= image_tag "sydney.jpg", class:"intro-image" %>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  </div>
+</div>
+
+
+<%= javascript_pack_tag 'imageslider' %>

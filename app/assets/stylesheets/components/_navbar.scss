@@ -4,14 +4,17 @@
   background: $red;
   transition: all 0.3s ease;
   height: 70px;
+  width: 100vh;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   h1{
     color:white;
+    font-family: 'Indie Flower', 'cursive';
+    letter-spacing: 3px;
     font-size:30px;
-    margin-top: 0px;
+    margin-top: 0.63vh;
     margin-bottom: 0px;
   }
 }
@@ -33,6 +36,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-wagon-left .far {
+  color: white;
+  font-size: 30px;
 }
 
 /* Basic navbar item */
