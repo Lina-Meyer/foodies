@@ -11,8 +11,8 @@ Restaurant.destroy_all
 User.destroy_all
 
 lina = User.create!(email: "lina.meyer@gmail.com", first_name: 'Lina', last_name:'Meyer', password: '123456',  remote_photo_url: 'https://res.cloudinary.com/linameyer/image/upload/v1528372666/Lina.jpg')
-hannah = User.create!(email: "hannah.meyer@gmail.com", first_name: 'Hannah', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
-fritz = User.create!(email: "fritz.meyer@gmail.com", first_name: 'Fritz', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
+hannah = User.create!(email: "hannah.meyer@gmail.com", first_name: 'Hannah', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1529260082/vn7ghcnxvl6agc0sanjd.jpg')
+fritz = User.create!(email: "fritz.meyer@gmail.com", first_name: 'Fritz', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1528376862/vsds72miiiqbsmpjmkap.jpg')
 ida = User.create!(email: "ida.meyer@gmail.com", first_name: 'Ida', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
 lotta = User.create!(email: "lotta.meyer@gmail.com", first_name: 'Lotta', last_name:'Meyer', password: '123456',remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
 
