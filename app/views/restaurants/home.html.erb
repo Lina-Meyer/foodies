@@ -1,4 +1,5 @@
 <div class="wrapper">
+
   <div class="search-home">
     <%= form_tag restaurants_path, method: :get do %>
       <%= text_field_tag :city,
@@ -12,12 +13,6 @@
     <% end %>
   </div>
 
-  <div class="restaurant">
-    <%= form_tag restaurants_path do %>
-      <%= text_field_tag :email %>
-      <%= submit_tag %>
-    <% end %>
-  </div>
   <div class="header-home">
     <h1>Most popular cities</h1>
   </div>
