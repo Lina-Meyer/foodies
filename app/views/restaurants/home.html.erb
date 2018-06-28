@@ -7,7 +7,7 @@
       <% end %>
     </div>
 
-    <div class="ask-me">
+    <div class="add-restaurant">
       <%= button_tag(type: 'button') do %>
         <i class="fas fa-plus"></i>
       <% end %>
@@ -27,6 +27,12 @@
     <% end %>
   </div>
 
+  <div class="restaurant">
+    <%= form_tag restaurants_path do %>
+      <%= text_field_tag :email %>
+      <%= submit_tag %>
+    <% end %>
+  </div>
   <div class="header-home">
     <h1>Most popular cities</h1>
   </div>
