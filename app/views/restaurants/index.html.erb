@@ -25,7 +25,7 @@
                     <p><%= restaurant.city %></p>
                   </div>
                   <div class="stars-index">
-                    <p><%= restaurant.ratings.first.stars %></p>
+                    <p><i class="fas fa-star"></i> <%= restaurant.ratings.first.stars.to_f %></p>
                   </div>
                   <div class="avatar-index">
                     <% restaurant.users.each do |user| %>
