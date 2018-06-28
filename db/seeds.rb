@@ -10,11 +10,11 @@ Friendship.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 
-lina = User.create!(email: "lina.meyer@gmail.com", first_name: 'Lina', last_name:'Meyer', password: '123456',  remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1528448332/Linaneu.jpg')
-hannah = User.create!(email: "hannah.meyer@gmail.com", first_name: 'Hannah', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1528446361/jpps8irsv9j6tvz9ltnp.jpg')
-fritz = User.create!(email: "fritz.meyer@gmail.com", first_name: 'Fritz', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1528461064/dmhqc5fdjc3gxd6k6tr0.jpg')
-ida = User.create!(email: "ida.meyer@gmail.com", first_name: 'Ida', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1528273896/lxnuzsujkapxqt3kbrqk.jpg')
-lotta = User.create!(email: "lotta.meyer@gmail.com", first_name: 'Lotta', last_name:'Meyer', password: '123456',remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1527242741/mexyfhwzqesywdqibhpv.jpg')
+lina = User.create!(email: "lina.meyer@gmail.com", first_name: 'Lina', last_name:'Meyer', password: '123456',  remote_photo_url: 'https://res.cloudinary.com/linameyer/image/upload/v1528372666/Lina.jpg')
+hannah = User.create!(email: "hannah.meyer@gmail.com", first_name: 'Hannah', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
+fritz = User.create!(email: "fritz.meyer@gmail.com", first_name: 'Fritz', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
+ida = User.create!(email: "ida.meyer@gmail.com", first_name: 'Ida', last_name:'Meyer', password: '123456', remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
+lotta = User.create!(email: "lotta.meyer@gmail.com", first_name: 'Lotta', last_name:'Meyer', password: '123456',remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1526740996/x9arckfabiyiwh2hstsv.jpg')
 
 
 hot = Restaurant.create!(name: 'Hot', address: 'Dominikanerstraße 14, 40545 Düsseldorf', city:'Düsseldorf')
