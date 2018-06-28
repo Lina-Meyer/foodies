@@ -9,7 +9,7 @@
   display: flex;
 }
 
-.ask-me {
+.ask-me, .add-restaurant {
   text-align: center;
 
   .fas {
@@ -24,6 +24,10 @@
     background: $red;
     color: white;
   }
+}
+
+.search-home, .restaurant {
+  display: none;
 }
 
 .search-home {
