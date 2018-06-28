@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
-gem 'figaro'
+
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "geocoder"
