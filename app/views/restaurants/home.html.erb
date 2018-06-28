@@ -1,13 +1,32 @@
 <div class="wrapper">
+
+  <div class="menu">
+    <div class="ask-me">
+      <%= button_tag(type: 'button') do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+
+    <div class="ask-me">
+      <%= button_tag(type: 'button') do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+
   <div class="search-home">
     <%= form_tag restaurants_path, method: :get do %>
       <%= text_field_tag :city,
-        params[:city],
-        class: "form-control",
-        placeholder: "Search for city or friend"
+      params[:city],
+      class:"form-control",
+      placeholder: "Search for city or friend"
       %>
+      <%= button_tag :submit do %>
+        <i class="fas fa-search"></i>
+      <% end %>
     <% end %>
   </div>
+
   <div class="header-home">
     <h1>Most popular cities</h1>
   </div>
@@ -46,3 +65,4 @@
 
 
 <%= javascript_pack_tag 'imageslider' %>
+<%= javascript_pack_tag 'search' %>
