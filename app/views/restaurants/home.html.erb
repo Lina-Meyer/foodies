@@ -1,19 +1,4 @@
 <div class="wrapper">
-
-  <div class="menu">
-    <div class="ask-me">
-      <%= button_tag(type: 'button') do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    </div>
-
-    <div class="add-restaurant">
-      <%= button_tag(type: 'button') do %>
-        <i class="fas fa-plus"></i>
-      <% end %>
-    </div>
-  </div>
-
   <div class="search-home">
     <%= form_tag restaurants_path, method: :get do %>
       <%= text_field_tag :city,
@@ -36,37 +21,59 @@
   <div class="header-home">
     <h1>Most popular cities</h1>
   </div>
-  <div class="slideshow-container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="city1">
+        <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Munich</h1>
+        </div>
+      </div>
+      <div class="city1">
+        <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Sydney</h1>
+        </div>
+      </div>
+      <div class="city1">
+        <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Barcelona</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+
+
+  <div class="header-home">
+    <h1>Latest reviews</h1>
+  </div>
+  <div class="slideshow-container">
     <div class="mySlides1">
       <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
-      <div class="mySlidesText1">
+      <div class="city1">
         <h1>Munich</h1>
       </div>
     </div>
 
     <div class="mySlides1">
       <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
-      <div class="mySlidesText1">
+      <div class="city1">
         <h1>Sydney</h1>
       </div>
     </div>
 
     <div class="mySlides1">
       <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
-      <div class="mySlidesText1">
+      <div class="city1">
         <h1>Barcelona</h1>
       </div>
     </div>
-
     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
     <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
   </div>
-
-  <div class="header-home">
-    <h1>Latest reviews</h1>
-  </div>
-
 </div>
 
 
