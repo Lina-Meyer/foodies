@@ -24,11 +24,27 @@ class RestaurantsController < ApplicationController
 
       # @restaurants = @restaurants_pure(city: params[:city])
       @restaurants = @restaurants_pure.select do |restaurant|
-          restaurant.city == params[:city]
+        restaurant.city == params[:city]
       end
       # @restaurants = @restaurants_list.where(city: params[:city])
     else
       @restaurants = []
     end
+
+    #index map
+
+    @restaurants_map = @restaurants.select do |restaurant|
+      restaurant.latitude != nil && restaurant.longitude != nil
+    end
+
+
+    @markers = @restaurants_map.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+
   end
 end
