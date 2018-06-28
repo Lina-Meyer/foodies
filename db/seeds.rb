@@ -17,10 +17,10 @@ ida = User.create!(email: "ida.meyer@gmail.com", first_name: 'Ida', last_name:'M
 lotta = User.create!(email: "lotta.meyer@gmail.com", first_name: 'Lotta', last_name:'Meyer', password: '123456',remote_photo_url: 'http://res.cloudinary.com/linameyer/image/upload/v1527242741/mexyfhwzqesywdqibhpv.jpg')
 
 
-hot = Restaurant.create!(name: 'Hot', address: 'Weezer Strasse 6', city:'Düsseldorf')
-monkeys = Restaurant.create!(name: 'monkeys', address: 'Weezer Strasse 6', city:'Düsseldorf')
-saitta = Restaurant.create!(name: 'Saitta', address: 'Weezer Strasse 6', city:'Düsseldorf')
-fratelli = Restaurant.create!(name: 'Fratelli', address: 'Weezer Strasse 6', city:'Hamburg')
+hot = Restaurant.create!(name: 'Hot', address: 'Dominikanerstraße 14, 40545 Düsseldorf', city:'Düsseldorf')
+monkeys = Restaurant.create!(name: 'Olio', address: 'Schirmerstraße 54, 40211 Düsseldorf', city:'Düsseldorf')
+saitta = Restaurant.create!(name: 'Saitta', address: 'Barbarossapl. 3, 40545 Düsseldorf', city:'Düsseldorf')
+fratelli = Restaurant.create!(name: 'Peter Pane', address: 'Schäferkampsallee 1, 20357 Hamburg', city:'Hamburg')
 
 hannah_rating_1 = Rating.create!(
   header: "Very good restaurant",

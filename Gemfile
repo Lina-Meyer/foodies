@@ -4,6 +4,7 @@ ruby '2.4.4'
 gem 'figaro'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem "geocoder"
 
 gem 'bootsnap', require: false
 gem 'devise'

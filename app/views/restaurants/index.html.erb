@@ -23,8 +23,13 @@
       </div>
     </div>
     <div id="tab2" class="tab-slider--body">
-      <h2>Second Tab</h2>
-      <p>Google Maps</p>
+      <h2>Google Maps</h2>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
     </div>
   </div>
 </div>
