@@ -28,8 +28,13 @@
                     <p><i class="fas fa-star"></i> <%= restaurant.ratings.first.stars.to_f %></p>
                   </div>
                   <div class="avatar-index">
-                    <% restaurant.users.each do |user| %>
-                      <%= cl_image_tag user.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                    <% if restaurant.users.count > 1 %>
+                      <%= cl_image_tag restaurant.users.first.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                      <div class="plus-number">
+                        <p>+<%= restaurant.users.count - 1 %></p>
+                      </div>
+                    <% else %>
+                      <%= cl_image_tag restaurant.users.first.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
                     <% end %>
                   </div>
                 </div>
