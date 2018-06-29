@@ -45,42 +45,35 @@
   <div class="header-home">
     <h1>Latest reviews</h1>
   </div>
-  <div>
-    <% Rating.all.order('created_at DESC').take(3).each do |r| %>
-      <%= r.restaurant.name %>
-      <%= r.restaurant.city %>
-      <%= r.stars %>
-      <%= r.header %>
-      <%= r.user.first_name %>
-      <%= cl_image_tag r.restaurant.users.first.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar" %>
-    <% end %>
-  </div>
-
   <div class="slideshow-container">
-    <div class="mySlides1">
-      <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
-      <div class="city1">
-        <h1>Munich</h1>
-      </div>
-    </div>
+    <% Rating.all.order('created_at DESC').take(3).each do |r| %>
+      <div class="mySlides1">
+        <% if r.photo == nil  %>
+            <%= image_tag("munich.jpg") %>
+          <% else %>
+            <%= r.photo %>
+        <% end %>
+        <div class="rating-description">
+          <h4>"<%= r.header %>"</h4>
+          <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
+        </div>
+<!--         <div class="rating-photo">
+            <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
+        </div> -->
+          <div class="rating-star">
+            <i class="fas fa-star"></i> <%= r.stars.to_f %>
+          </div>
 
-    <div class="mySlides1">
-      <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
-      <div class="city1">
-        <h1>Sydney</h1>
+          <div class="rating-rname-rcity">
+            <%= r.restaurant.name%><span>,</span> <%= r.restaurant.city %>
+          </div>
       </div>
-    </div>
-
-    <div class="mySlides1">
-      <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
-      <div class="city1">
-        <h1>Barcelona</h1>
-      </div>
-    </div>
+    <% end %>
     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
     <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
   </div>
 </div>
+
 
 
 <%= javascript_pack_tag 'imageslider' %>
