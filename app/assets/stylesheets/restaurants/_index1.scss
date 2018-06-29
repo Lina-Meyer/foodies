@@ -22,13 +22,14 @@
 .center-index-text {
   h4 {
     margin-bottom: 0px;
-    font-size: 22px;
+    font-size: 20px;
     // text has to be vertical
     padding-top: 5%;
   }
 
   p {
     font-size: 15px;
+    font-weight: lighter;
   }
 }
 
@@ -44,6 +45,31 @@
   position: absolute;
   top: -15%;
   right: 1vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  border: 1px solid black;
+}
+
+.plus-number {
+    border: 1px solid black;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: -6px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+
+    p {
+    font-weight: lighter;
+    font-size: 15px;
+    /* font-family: 'Indie Flower', 'cursive'; */
+    letter-spacing: 1px;
+    }
 }
 
 .stars-index {
