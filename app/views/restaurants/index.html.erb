@@ -11,12 +11,29 @@
         <div class="col-sm-8 col-sm-offset-2">
           <div id="restaurants">
             <% @restaurants.each do |restaurant| %>
-              <h4><%= restaurant.name %></h4>
-              <p><%= restaurant.city %></p>
-              <% restaurant.users.each do |user| %>
-                <p><%= user.email %></p>
-                <%= cl_image_tag user.photo_url, width: 150, height: 150, crop: :thumb, gravity: :face, class:"avatar"   %>
-              <% end %>
+              <div class="restaurant-flex">
+                <div class="image-index">
+                  <% if restaurant.ratings.first.photo == nil  %>
+                    <%= image_tag("munich.jpg") %>
+                  <% else %>
+                    <%= restaurant.ratings.first.photo %>
+                  <% end %>
+                </div>
+                <div class="text-index">
+                  <div class="center-index-text">
+                    <h4><%= restaurant.name %></h4>
+                    <p><%= restaurant.city %></p>
+                  </div>
+                  <div class="stars-index">
+                    <p><i class="fas fa-star"></i> <%= restaurant.ratings.first.stars.to_f %></p>
+                  </div>
+                  <div class="avatar-index">
+                    <% restaurant.users.each do |user| %>
+                      <%= cl_image_tag user.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>
