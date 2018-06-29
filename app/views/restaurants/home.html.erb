@@ -45,6 +45,17 @@
   <div class="header-home">
     <h1>Latest reviews</h1>
   </div>
+  <div>
+    <% Rating.all.order('created_at DESC').take(3).each do |r| %>
+      <%= r.restaurant.name %>
+      <%= r.restaurant.city %>
+      <%= r.stars %>
+      <%= r.header %>
+      <%= r.user.first_name %>
+      <%= cl_image_tag r.restaurant.users.first.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar" %>
+    <% end %>
+  </div>
+
   <div class="slideshow-container">
     <div class="mySlides1">
       <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
