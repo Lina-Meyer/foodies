@@ -59,8 +59,29 @@
   padding-bottom: 4vh;
 
   h1 {
-    font-size: 30px;
+    font-size: 24px;
     opacity: 0.8;
+  }
+}
+
+// top cities
+
+.city1 {
+  position: relative;
+  text-align: center;
+  color: black;
+  margin-bottom: 5%;
+}
+
+.citytext1{
+  position: absolute;
+  bottom: 7px;
+  right: 17px;
+  h1 {
+    font-family: Montserrat;
+    font-size: 21px;
+    color: white;
+    font-weight: 300;
   }
 }
 
@@ -73,28 +94,69 @@
   border-radius: 7px;
 }
 
-.city1 {
+.mySlides1 {
   position: relative;
-  text-align: center;
-  color: white;
-  margin-bottom: 7%;
-}
-
-.citytext1{
-  position: absolute;
-  bottom: 7px;
-  right: 17px;
-  h1 {
-    font-family: Montserrat;
-    font-size: 21px;
-    font-weight: 300;
+  img {
+  max-width: 100%;
+  border-radius: 7px;
+  -webkit-filter: brightness(.75);
+  filter: brightness(.75);
   }
 }
 
+.rating-star{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: white;
+  font-size: 18px;
+
+  .fas {
+    color: $red;
+    font-size: 18px;
+  }
+}
+
+.rating-description {
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  height: 70%;
+  margin: auto;
+
+  h4 {
+    font-style: italic;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.rating-rname-rcity {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: white;
+  font-size: 18px;
+}
 
 .slideshow-container {
-  position: relative;
   margin: auto;
+  position: relative;
+}
+
+.rating-photo {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: white;
 }
 
 /* Next & previous buttons */
