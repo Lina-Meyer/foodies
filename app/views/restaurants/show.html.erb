@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="card col-xs-6 col-md-7 restaurant-description">
+      <div class="image-show">
+        <% if @restaurant_show.ratings.first.photo == nil  %>
+          <%= image_tag("munich.jpg") %>
+        <% else %>
+          <%= restaurant_show.ratings.first.photo %>
+        <% end %>
+      </div>
+      <div class="text-show">
+        <h4><%= @restaurant_show.name %></h4>
+        <p><%= @restaurant_show.city %></p>
+        <p><i class="fas fa-star"></i> <%= @restaurant_show.ratings.first.stars.to_f %></p>
+      </div>
+    </div>
+  </div>
+  <div class="line">
+  </div>
+  <h2 class="review-header">Reviews</h2>
+  <% @restaurant_show.ratings.each do |r| %>
+    <div class="reviews-show">
+      <%= cl_image_tag r.user.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+      <%= r.description %>
+      <%= r.stars.to_f %>
+    </div>
+  <% end %>
+</div>

@@ -12,7 +12,7 @@
         <div class="col-sm-8 col-sm-offset-2">
           <div id="restaurants">
             <% @restaurants.each do |restaurant| %>
-              <%= link_to root_path do %>
+              <%= link_to restaurant_path(restaurant) do %>
                 <div class="restaurant-flex">
                   <div class="image-index">
                     <% if restaurant.ratings.first.photo == nil  %>

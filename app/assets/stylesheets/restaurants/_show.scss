@@ -1,0 +1,36 @@
+.image-show img{
+  height: 17vh;
+  width: 24vh;
+  border-radius: 7px;
+}
+
+.restaurant-description {
+  display: flex;
+}
+
+.text-show {
+  margin-left: 15%;
+  vertical-align: middle;
+
+  h4 {
+    margin: 0px;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  .fas {
+    color: $red;
+  }
+}
+
+.line {
+  border-bottom: 0.9px solid gray;
+  margin: 10%;
+}
+
+.reviews-show {
+  display: flex;
+  justify-content: space-between;
+}
