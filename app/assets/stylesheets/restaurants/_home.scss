@@ -33,7 +33,11 @@
 .search-home {
   margin: 0 auto;
   // margin-top: 10vh;
-
+  .form-control {
+    border-radius: 20px 0px 0px 20px;
+    text-align: center;
+    justify-content: space-between;
+  }
   .fas {
     color: white;
     margin-left: 1vh;
@@ -41,11 +45,7 @@
   }
 }
 
-.form-control {
-  border-radius: 20px 0px 0px 20px;
-  text-align: center;
-  justify-content: space-between;
-}
+
 
 .form-control:focus {
   border-color: rgba(232, 99, 94, 0.6);
