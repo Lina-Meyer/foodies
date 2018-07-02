@@ -6,17 +6,21 @@
   display: flex;
   justify-content: space-between;
   margin-top: 4vh;
+  border: 0.6px solid RGBA(170, 170, 170, 0.9);
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.restaurant-flex:hover {
+  border: 0.6px solid $red;
+  text-decoration: none;
 }
 
 .text-index {
-  border: 0.6px solid RGBA(170, 170, 170, 0.9);
-  border-radius: 7px;
   height: 14vh;
   width: 30vh;
   position: relative;
-  padding-left: 15px;
   vertical-align: middle;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.12);
 }
 
 .center-index-text {
@@ -25,20 +29,22 @@
     font-size: 20px;
     // text has to be vertical
     padding-top: 5%;
+    color: black;
+    opacity: 0.8;
   }
 
   p {
     font-size: 15px;
     font-weight: lighter;
+    color: black;
+    opacity: 0.8;
   }
 }
 
 .image-index img {
-  margin-right: 2vh;
   height: 14vh;
   width: 17vh;
-  border-radius: 7px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.12);
+  border-radius: 7px 0px 0px 7px;
 }
 
 .avatar-index {
@@ -47,10 +53,6 @@
   right: 1vh;
   display: flex;
   justify-content: space-between;
-}
-
-.avatar {
-  border: 1px solid black;
 }
 
 .plus-number {
@@ -69,6 +71,8 @@
     font-size: 15px;
     /* font-family: 'Indie Flower', 'cursive'; */
     letter-spacing: 1px;
+    color: black;
+    opacity: 0.8;
     }
 }
 
@@ -85,6 +89,8 @@
   p {
     font-weight: 400;
     font-size: 15px;
+    color: black;
+    opacity: 0.8;
   }
 }
 
