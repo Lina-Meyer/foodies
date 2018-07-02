@@ -5,7 +5,7 @@
         <% if @restaurant_show.ratings.first.photo == nil  %>
           <%= image_tag("munich.jpg") %>
         <% else %>
-          <%= restaurant_show.ratings.first.photo %>
+          <%= @restaurant_show.ratings.first.photo %>
         <% end %>
       </div>
       <div class="text-show">

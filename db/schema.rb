@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_133545) do
   create_table "ratings", force: :cascade do |t|
     t.text "header"
     t.text "description"
+    t.string "photo"
     t.string "video"
     t.string "atmosphere"
     t.integer "stars"
