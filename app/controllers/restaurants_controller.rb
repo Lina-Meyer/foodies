@@ -48,6 +48,10 @@ class RestaurantsController < ApplicationController
 
   end
 
+  def show
+    @restaurant_show = Restaurant.find(params[:id])
+  end
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
