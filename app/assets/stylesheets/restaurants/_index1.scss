@@ -1,0 +1,91 @@
+#restaurants {
+  margin-top: 13vh;
+}
+
+.restaurant-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vh;
+}
+
+.text-index {
+  border: 0.6px solid RGBA(170, 170, 170, 0.9);
+  border-radius: 7px;
+  height: 14vh;
+  width: 30vh;
+  position: relative;
+  padding-left: 15px;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.12);
+}
+
+.center-index-text {
+  h4 {
+    margin-bottom: 0px;
+    font-size: 20px;
+    // text has to be vertical
+    padding-top: 5%;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: lighter;
+  }
+}
+
+.image-index img {
+  margin-right: 2vh;
+  height: 14vh;
+  width: 17vh;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 2px rgba(0,0,0,0.12);
+}
+
+.avatar-index {
+  position: absolute;
+  top: -15%;
+  right: 1vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  border: 1px solid black;
+}
+
+.plus-number {
+    border: 1px solid black;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: -6px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+
+    p {
+    font-weight: lighter;
+    font-size: 15px;
+    /* font-family: 'Indie Flower', 'cursive'; */
+    letter-spacing: 1px;
+    }
+}
+
+.stars-index {
+  position: absolute;
+  right: 2vh;
+  bottom: 0px;
+
+  .fas {
+    font-size: 14px;
+    color: $red;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+
