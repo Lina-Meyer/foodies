@@ -5,6 +5,7 @@ ruby '2.4.4'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "geocoder"
+gem 'country_select'
 
 gem 'bootsnap', require: false
 gem 'devise'

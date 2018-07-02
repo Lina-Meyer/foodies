@@ -47,4 +47,20 @@ class RestaurantsController < ApplicationController
     end
 
   end
+
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+    else
+      render :new
+    end
+
+  end
+
+  private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :zipcode, :country, :city)
+  end
+
 end
