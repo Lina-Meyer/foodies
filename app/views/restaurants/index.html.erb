@@ -14,10 +14,12 @@
             <% @restaurants.each do |restaurant| %>
               <div class="restaurant-flex">
                 <div class="image-index">
-                  <% if restaurant.ratings.first.photo == nil  %>
+                  <% if restaurant.ratings.first.photos == nil  %>
                     <%= image_tag("munich.jpg") %>
                   <% else %>
-                    <%= restaurant.ratings.first.photo %>
+                    <%= restaurant.ratings.first.photos.each do |photo|%>
+                      <%= photo %>
+                    <% end %>
                   <% end %>
                 </div>
                 <div class="text-index">

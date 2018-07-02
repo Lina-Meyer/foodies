@@ -19,7 +19,7 @@ class RatingsController < ApplicationController
   private
 
   def rating_params
-    params.require(:rating).permit(:header, :description, :amtosphere, :stars)
+    params.require(:rating).permit(:header, :description, :atmosphere, :stars, {photos: []})
   end
 
 end
