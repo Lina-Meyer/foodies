@@ -42,6 +42,7 @@
       <%= f.input :description %>
       <%= f.input :atmosphere %>
       <%= f.input :stars %>
+      <%= f.file_field :photos, multiple:true %>
       <%= f.submit class: 'submit-button'%>
   </div>
     <% end %>

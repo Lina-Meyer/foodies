@@ -3,7 +3,6 @@ class CreateRatings < ActiveRecord::Migration[5.2]
     create_table :ratings do |t|
       t.text :header
       t.text :description
-      t.string :photo
       t.string :video
       t.string :atmosphere
       t.integer :stars
