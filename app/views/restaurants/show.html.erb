@@ -20,19 +20,24 @@
   <h2 class="review-header">Reviews</h2>
   <% @restaurant_show.ratings.each do |r| %>
     <div class="reviews-show">
-      <div class="reviews-avatar">
-        <%= cl_image_tag r.user.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar-reviews"   %>
-      </div>
-      <div class="reviews-info">
-        <div class="reviews-info-name">
-          <%= r.user.first_name %> <%= r.user.last_name  %>
+      <div class="reviews-avatar-info">
+        <div class="reviews-avatar">
+          <%= cl_image_tag r.user.photo_url, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar-reviews"   %>
         </div>
-        <div class="reviews-info-date">
-          <%= r.created_at.strftime("%b %Y") %>
+        <div class="reviews-info">
+          <div class="reviews-info-name">
+            <%= r.user.first_name %> <%= r.user.last_name  %>
+          </div>
+          <div class="reviews-info-date">
+            <%= r.created_at.strftime("%b %Y") %>
+          </div>
         </div>
       </div>
-      <div class="reviews-stars">
-        <%= r.stars.to_f %>
+<!--       <div class="reviews-stars">
+        <%= r.stars %>
+      </div> -->
+      <div class="review-stars">
+        <%= select_tag "stars", options_for_select((0..5).to_a, r.stars), class: "review-stars-select" %>
       </div>
     </div>
     <div class="reviews-description">
