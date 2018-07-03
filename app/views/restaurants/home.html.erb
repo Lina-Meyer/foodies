@@ -51,7 +51,7 @@
         <% if r.photo == nil  %>
             <%= image_tag("munich.jpg") %>
           <% else %>
-            <%= r.photo %>
+            <%= cl_image_tag r.photo %>
         <% end %>
         <div class="rating-description">
           <h4>"<%= r.header %>"</h4>
