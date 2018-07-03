@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_133545) do
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "photos"
+    t.string "photo"
     t.index ["restaurant_id"], name: "index_ratings_on_restaurant_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
