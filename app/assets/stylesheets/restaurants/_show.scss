@@ -32,5 +32,53 @@
 
 .reviews-show {
   display: flex;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 5%;
   justify-content: space-between;
+
 }
+
+.review-header {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 25px;
+  color: black;
+  opacity: 0.6;
+  font-weight: lighter;
+  padding-bottom: 5%;
+}
+
+.reviews-description {
+  // vertical-align: middle;
+}
+
+.reviews-stars {
+  // vertical-align: middle;
+  text-align: right;
+}
+
+.reviews-avatar {
+  padding-right: 5%;
+  vertical-align: middle;
+}
+
+.reviews-description {
+  text-align: justify;
+}
+
+.reviews-info {
+  text-align: left;
+  padding: 0px;
+}
+
+.line-reviews {
+  border-bottom: 0.9px solid gray;
+  margin: 5% 1% 4% 1%;
+}
+
+.avatar-reviews {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+}
+
