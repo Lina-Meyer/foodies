@@ -2,10 +2,10 @@
   <div class="row">
     <div class="card col-xs-6 col-md-7 restaurant-description">
       <div class="image-show">
-        <% if @restaurant_show.ratings.first.photo == nil  %>
-          <%= image_tag("munich.jpg") %>
+        <% unless @restaurant_show.ratings.first.photo.blank? %>
+          <%= cl_image_tag @restaurant_show.ratings.first.photo %>
         <% else %>
-          <%= @restaurant_show.ratings.first.photo %>
+          <%= image_tag("munich.jpg") %>
         <% end %>
       </div>
       <div class="text-show">
