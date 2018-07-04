@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="search-home">
+    <%= form_tag new_friendship_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class:"form-control",
+      placeholder: "Search for a friend"
+      %>
+      <%= button_tag :submit do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="display-friends">
+    <% if @users.nil? %>
+      <div style="margin-top:15px;margin-bottom:15px">
+        <div class="line"></div>
+      </div>
+    <% else %>
+      <% @users.each do |user| %>
+        <div style="margin-top:15px;margin-bottom:15px">
+          <div class="line"></div>
+        </div>
+        <div class="users-info">
+          <div class="flex-item profile-photo">
+            <%= cl_image_tag user.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar" %>
+          </div>
+          <div class="flex-item name">
+            <%= user.first_name %>
+            <%= user.last_name %>
+          </div>
+          <div class="flex-item follow-button">
+            Follow
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
