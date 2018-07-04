@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 4vh 3.4vh;
+  padding: 2.5vh 2.5vh;
   margin-top: 70px;
   padding-bottom: 70px;
   h1 {
@@ -7,3 +7,16 @@
   }
 }
 
+
+// The two wrappers below are only applied on the show page
+
+.wrapper-show {
+  padding: 4.2vh 2.5vh;
+  margin-top: 70px;
+  background: white;
+}
+
+.wrapper-show-rating {
+  padding: 2.5vh 2.5vh;
+  padding-bottom: 70px;
+}
