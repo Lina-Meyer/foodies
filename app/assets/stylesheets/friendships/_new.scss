@@ -1,0 +1,48 @@
+.display-friends {
+  margin-top: 30px;
+}
+
+.line {
+  width: 100%;
+  margin: 0%;
+  border-bottom: 0.9px solid #e4dddd;
+  margin-top: 5%;
+}
+.users-info {
+  display: flex;
+  align-items:center;
+  .profile-photo {
+    flex: 0 0 35px;
+  }
+  .name {
+    flex: 1 0 60%;
+    padding-left: 10px;
+  }
+  .follow-button {
+    flex: 0 0 40px;
+    background-color: white;
+    border-radius: 2px;
+    border:1px solid $red;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    a {
+      color: $red;
+      text-decoration: none;
+    }
+  }
+  .follow-button:hover {
+    background-color: $red;
+    border-radius: 2px;
+    border:none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

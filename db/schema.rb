@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_133545) do
   enable_extension "plpgsql"
 
   create_table "friendships", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "user_id"
     t.bigint "friend_id"
     t.datetime "created_at", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2018_07_02_133545) do
   create_table "ratings", force: :cascade do |t|
     t.text "header"
     t.text "description"
-    t.string "photo"
     t.string "video"
     t.string "atmosphere"
     t.integer "stars"
