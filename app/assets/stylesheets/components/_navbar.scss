@@ -14,10 +14,11 @@
   top: 0px;
   h1{
     color:white;
-    font-family: 'Indie Flower', 'cursive';
+    font-family: 'Noteworthy';
+    font-weight: lighter;
     letter-spacing: 3px;
     font-size:30px;
-    margin-top: 0.63vh;
+    margin-top: 0px;
     margin-bottom: 0px;
   }
 }
@@ -44,6 +45,7 @@
 .navbar-wagon-left .far {
   color: white;
   font-size: 30px;
+  padding-top: 0.8vh;
 }
 
 /* Basic navbar item */
