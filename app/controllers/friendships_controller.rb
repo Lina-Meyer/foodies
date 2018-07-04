@@ -9,5 +9,16 @@ class FriendshipsController < ApplicationController
   end
 
   def create
+    @friendship = Friendship.new
+    @friendship.user_id = current_user.id
+    @friend = User.find(params[:user_id])
+    @friendship.friend_id = @friend.id
+    @friendship.save
+  end
+
+  private
+
+  def friendship_params
+     params.require(:friendship).permit(:status)
   end
 end
