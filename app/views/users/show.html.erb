@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="user-details">
+    <div class="user-photo-show">
+      <%= cl_image_tag @user_show.photo, crop: :thumb, gravity: :face%>
+    </div>
+    <div class="user-data-show">
+      <p><%= @user_show.ratings.count %> reviews</p>
+      <p><%= @user_show.friendships.count %> friends</p>
+    </div>
+  </div>
+</div>
