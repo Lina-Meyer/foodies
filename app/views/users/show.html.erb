@@ -3,9 +3,18 @@
     <div class="user-photo-show">
       <%= cl_image_tag @user_show.photo, crop: :thumb, gravity: :face%>
     </div>
-    <div class="user-data-show">
-      <h4><%= @user_show.ratings.count %> reviews</h4>
-      <h4><%= @user_show.friendships.count %> friends</h4>
+    <div class="number-friendships-reviews">
+      <div class="number-reviews">
+        <h4><%= @user_show.ratings.count %></h4>
+        <p>reviews</p>
+      </div>
+      <div class="number-friendships">
+        <h4><%= @user_show.friendships.count %></h4>
+        <p>friends</p>
+      </div>
+    </div>
+    <div class="edit-profile-show">
+      <h4>Edit profile</h4>
     </div>
   </div>
   <div class="user-show-icons">
@@ -25,24 +34,26 @@
   </div>
   <div class="user-reviews">
     <% @user_show.ratings.each do |rating| %>
-      <div class="user-review-show">
-        <div class="image-user-show">
-          <% unless rating.photo.blank? %>
-            <%= cl_image_tag rating.first.photo %>
-          <% else %>
-            <%= image_tag("munich.jpg")%>
-          <% end %>
-        </div>
-        <div class="image-user-show-facts">
-          <div class="name-city-user">
-            <h4><%= rating.restaurant.name %></h4>
-            <p><%= rating.restaurant.city %></p>
+      <%= link_to restaurant_path(rating.restaurant) do %>
+        <div class="user-review-show">
+          <div class="image-user-show">
+            <% unless rating.photo.blank? %>
+              <%= cl_image_tag rating.first.photo %>
+            <% else %>
+              <%= image_tag("munich.jpg")%>
+            <% end %>
           </div>
-          <div class="stars-user">
-            <p><%= rating.stars %></p>
+          <div class="image-user-show-facts">
+            <div class="name-city-user">
+              <h4><%= rating.restaurant.name %></h4>
+              <p><%= rating.restaurant.city %></p>
+            </div>
+            <div class="stars-user">
+              <p><%= rating.stars %></p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div class="top-5-user">
