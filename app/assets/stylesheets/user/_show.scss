@@ -7,11 +7,19 @@
 .user-details {
   display: flex;
   margin-bottom: 6vh;
+  position: relative;
 }
 
 .user-data-show {
-  vertical-align: middle;
-  padding-left: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  margin: 0;
+
+  h4 {
+    font-size: 18px;
+  }
 }
 
 .image-user-show img {
@@ -58,4 +66,16 @@
   position: absolute;
   right: 12px;
   bottom: 6px;
+}
+
+// wishlist
+
+.wishlist-user {
+  display: none;
+}
+
+// top 5
+
+.top-5-user{
+  display: none;
 }
