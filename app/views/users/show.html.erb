@@ -8,4 +8,41 @@
       <p><%= @user_show.friendships.count %> friends</p>
     </div>
   </div>
+  <div class="user-show-icons">
+    <div class="line-show"></div>
+    <div class="quick-facts">
+      <div class="show-directions">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="wishlist">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="show-phone">
+        <i class="fas fa-phone"></i>
+      </div>
+    </div>
+    <div class="line-show"></div>
+  </div>
+  <div class="user-reviews">
+    <% @user_show.ratings.each do |rating| %>
+      <div class="user-review-show">
+        <div class="image-user-show">
+          <% unless rating.photo.blank? %>
+            <%= cl_image_tag rating.first.photo %>
+          <% else %>
+            <%= image_tag("munich.jpg")%>
+          <% end %>
+        </div>
+        <div class="image-user-show-facts">
+          <div class="name-city-user">
+            <h4><%= rating.restaurant.name %></h4>
+            <p><%= rating.restaurant.city %></p>
+          </div>
+          <div class="stars-user">
+            <p><%= rating.stars %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
