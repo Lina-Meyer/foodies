@@ -4,21 +4,21 @@
       <%= cl_image_tag @user_show.photo, crop: :thumb, gravity: :face%>
     </div>
     <div class="user-data-show">
-      <p><%= @user_show.ratings.count %> reviews</p>
-      <p><%= @user_show.friendships.count %> friends</p>
+      <h4><%= @user_show.ratings.count %> reviews</h4>
+      <h4><%= @user_show.friendships.count %> friends</h4>
     </div>
   </div>
   <div class="user-show-icons">
     <div class="line-show"></div>
     <div class="quick-facts">
-      <div class="show-directions">
-        <i class="fas fa-map-marker-alt"></i>
+      <div class="reviews-all-user">
+<i class="fas fa-star"></i>
       </div>
       <div class="wishlist">
         <i class="fas fa-heart"></i>
       </div>
-      <div class="show-phone">
-        <i class="fas fa-phone"></i>
+      <div class="top-5">
+        <i class="fas fa-list-ol"></i>
       </div>
     </div>
     <div class="line-show"></div>
@@ -45,4 +45,14 @@
       </div>
     <% end %>
   </div>
+  <div class="top-5-user">
+    <p>1. He</p>
+    <p>2. he</p>
+  </div>
+  <div class="wishlist-user">
+    <p>1. He</p>
+    <p>2. he</p>
+  </div>
 </div>
+
+<%= javascript_pack_tag 'user-show-hide' %>
