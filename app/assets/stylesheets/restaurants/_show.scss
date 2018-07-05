@@ -6,6 +6,7 @@
 
 .restaurant-description {
   display: flex;
+  margin-bottom: 6vh;
 }
 
 .text-show {
@@ -29,9 +30,8 @@
   }
 }
 
-.line {
-  border-bottom: 1px solid rgba(1, 1, 1, 0.25);
-  margin: 10% 10% 0% 10%;
+.line-show {
+  border-bottom: 1px solid rgba(1, 1, 1, 0.18);
 }
 
 .reviews-show {
@@ -98,25 +98,20 @@
 
 // data
 
-.facts {
+.quick-facts {
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 10%;
-  margin-right: 10%;
-}
+  justify-content: space-around;
 
-
-.fact {
-
-  .icon-text {
-    font-size: 14px;
-    padding-left: 50px;
+  .fas {
+    color: rgba(100, 100, 100, 0.6);
+    font-size: 25px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
   }
 
-  .fas{
+  .fas:hover {
+    text-decoration: none;
     color: $red;
-    font-size: 20px;
-    padding-right: 10px;
   }
 }
 

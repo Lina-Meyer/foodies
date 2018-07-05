@@ -16,9 +16,19 @@
       </div>
     </div>
   </div>
-  <div class="line"></div>
-
-  <div class="line"></div>
+  <div class="line-show"></div>
+  <div class="quick-facts">
+    <div class="show-directions">
+      <%= link_to "", ('https://www.google.com/maps/dir/?api=1&destination='+@restaurant_show.address), { :class=>"fas fa-map-marker-alt" } %>
+    </div>
+    <div class="wishlist">
+      <i class="fas fa-heart"></i>
+    </div>
+    <div class="show-phone">
+      <i class="fas fa-phone"></i>
+    </div>
+  </div>
+  <div class="line-show"></div>
 </div>
 <div class="wrapper-show-rating">
   <!-- <h2 class="review-header">Reviews</h2> -->
