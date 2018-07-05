@@ -13,12 +13,12 @@
   </div>
 
   <div class="display-friends">
-    <% if @users.nil? %>
+    <% if @new_users.nil? %>
       <div style="margin-top:15px;margin-bottom:15px">
         <div class="line"></div>
       </div>
     <% else %>
-      <% @users.each do |user| %>
+      <% @new_users.each do |user| %>
         <div style="margin-top:15px;margin-bottom:15px">
           <div class="line"></div>
         </div>
@@ -30,7 +30,7 @@
             <%= user.first_name %>
             <%= user.last_name %>
           </div>
-          <div class="follow-button">
+          <div class="follow-button" >
             <%= link_to "Follow", user_friendships_path(user), method: :post%>
           </div>
 
