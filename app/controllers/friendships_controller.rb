@@ -1,8 +1,10 @@
 class FriendshipsController < ApplicationController
   def new
+    @all = Friendship.all
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
       @users = User.where(sql_query, query: "%#{params[:query]}%")
+      raise
     else
       @users = nil
     end
