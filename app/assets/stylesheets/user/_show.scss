@@ -1,13 +1,62 @@
 .user-photo-show img {
   border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
 }
 
 .user-details {
   display: flex;
   margin-bottom: 6vh;
   position: relative;
+}
+
+.edit-profile-show {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translate(0, 5%);
+  margin: 0;
+  border: 1px solid black;
+  padding: 0vh 3.6vh;
+  border-radius: 7px;
+
+  h4 {
+    font-size: 14px;
+    margin: 8px 0px;
+  }
+}
+
+.edit-profile-show:hover {
+  background: $red;
+  color: white;
+  border: none;
+}
+
+.number-reviews {
+
+  h4{
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  }
+}
+
+.number-friendships {
+  margin-left: 4vh;
+
+  h4{
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  }
+}
+
+.number-friendships-reviews {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(0, 5%);
+  margin: 0;
 }
 
 .user-data-show {
@@ -55,10 +104,14 @@
   h4 {
     font-size: 17px;
     margin-bottom: 1px;
+    color: black;
+    opacity: 0.8;
   }
 
   p {
     font-size: 15px;
+    color: black;
+    opacity: 0.8;
   }
 }
 
@@ -66,6 +119,8 @@
   position: absolute;
   right: 12px;
   bottom: 6px;
+  color: black;
+  opacity: 0.8;
 }
 
 // wishlist
