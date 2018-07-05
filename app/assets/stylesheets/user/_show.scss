@@ -6,9 +6,56 @@
 
 .user-details {
   display: flex;
+  margin-bottom: 6vh;
 }
 
 .user-data-show {
   vertical-align: middle;
   padding-left: 20%;
+}
+
+.image-user-show img {
+  height: 12vh;
+  width: 23vh;
+  border-radius: 7px;
+}
+
+.user-reviews {
+  margin-top: 5vh;
+}
+
+.user-review-show {
+  display: flex;
+  background: rgba(220, 220, 220, 0.1);
+  border-radius: 7px;
+  margin-bottom: 2vh;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.image-user-show-facts p{
+  margin: 0;
+}
+
+.name-city-user {
+  position: absolute;
+  top: 10%;
+  transform: translate(0, -10%);
+  margin: 0;
+  padding-left: 10px;
+
+  h4 {
+    font-size: 17px;
+    margin-bottom: 1px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.stars-user {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
 }
