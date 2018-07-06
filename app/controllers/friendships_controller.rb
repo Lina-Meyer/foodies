@@ -34,6 +34,10 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  def show
+    @allfriendships = Friendship.all
+  end
+
   def create
     # eine Seite der Freunschaft
     @friendship = Friendship.new

@@ -1,0 +1,51 @@
+.all-friends-show {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5vh;
+  position: relative;
+}
+
+.all-friends-show {
+}
+
+.friends-header h4 {
+  margin-bottom: 4vh;
+  font-size: 21px;
+}
+
+.friend-photo-user-details {
+  display: flex;
+}
+
+.friends-user-details {
+  padding-left: 3vh;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction: column;
+
+  h4 {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+.unfriend-show {
+  border: 1px solid rgba(10, 10, 10, 0.3);
+  border-radius: 1px;
+  padding: 0px 10px;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction: column;
+
+  p {
+    font-size: 14px;
+    margin: 0px;
+  }
+}
