@@ -33,11 +33,5 @@ $(document).ready(function(){
 
 
 
-function(){
-  $('.follow-button').click(function() {
-    $(this).innerText = 'Angefragt';
-  });
-};
-
 
 

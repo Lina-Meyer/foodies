@@ -3,35 +3,26 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @all = Friendship.all
-    @new_friendships = Friendship.all.select do |f|
-      f.user_id == current_user.id or f.friend_id == current_user.id
-    end
-    @friends = []
-    @new_friendships.each do |friendship|
-      if current_user.id == friendship.user_id
-        @friends << friendship.friend
-      else
-        @friends << friendship.user
-      end
-    end
-
-
-
-
-
-
-
-
-
-
-
-
-    # @friendships = current_user.friendships
-    # @friends = []
-    # @friendships.each do |friendship|
-    #   @friends << friendship.friend
+    # @all = Friendship.all
+    # @new_friendships = Friendship.all.select do |f|
+    #   f.user_id == current_user.id or f.friend_id == current_user.id
     # end
+    # @friends = []
+    # @new_friendships.each do |friendship|
+    #   if current_user.id == friendship.user_id
+    #     @friends << friendship.friend
+    #   else
+    #     @friends << friendship.user
+    #   end
+    # end
+
+    @friendships = current_user.friendships
+    @friends = []
+    @friendships.each do |friendship|
+      @friends << friendship.friend
+    end
+
+
     @restaurants_list = []
     @friends.each do |friend|
       @restaurants_list << friend.restaurants
