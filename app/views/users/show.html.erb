@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="user-details">
     <div class="user-photo-show">
-      <%= cl_image_tag @user_show.photo, crop: :thumb, gravity: :face%>
+      <%= cl_image_tag @user_show.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar"%>
     </div>
     <div class="number-friendships-reviews">
       <div class="number-reviews">
