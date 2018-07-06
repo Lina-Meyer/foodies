@@ -9,7 +9,9 @@
         <p>reviews</p>
       </div>
       <div class="number-friendships">
-        <h4><%= @user_show.friendships.count %></h4>
+        <%= link_to user_friendship_path(current_user) do %>
+          <h4><%= @user_show.friendships.count %></h4>
+        <%end %>
         <p>friends</p>
       </div>
     </div>

@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="friends-header">
+    <h4>Friends</h4>
+  </div>
+  <% @allfriendships.each do |friend| %>
+    <div class="all-friends-show">
+      <div class="friend-photo-user-details">
+        <div class="friends-user-photo">
+          <%= cl_image_tag friend.user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar"%>
+        </div>
+        <div class="friends-user-details">
+          <h4><%= friend.user.first_name %> <%= friend.user.last_name %></h4>
+          <p> <%= friend.user.ratings.count %> reviews </p>
+        </div>
+      </div>
+      <div class="unfriend-show">
+        <p> unfriend </p>
+      </div>
+    </div>
+  <% end %>
+</div>
