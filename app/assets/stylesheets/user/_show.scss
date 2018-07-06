@@ -1,13 +1,33 @@
-.user-photo-show img {
-  border-radius: 50%;
-  width: 110px;
-  height: 110px;
-}
+
 
 .user-details {
   display: flex;
   margin-bottom: 6vh;
   position: relative;
+}
+
+.details {
+  position: absolute;
+  right: 0px;
+}
+
+.number-friendships-reviews {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(0, 5%);
+  margin: 0;
+}
+
+.profile-buttons {
+  // display:flex
+}
+
+
+.user-photo-show img {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
 }
 
 .edit-profile-show {
@@ -51,13 +71,7 @@
   }
 }
 
-.number-friendships-reviews {
-  display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translate(0, 5%);
-  margin: 0;
-}
+
 
 .user-data-show {
   position: absolute;
@@ -134,3 +148,4 @@
 .top-5-user{
   display: none;
 }
+
