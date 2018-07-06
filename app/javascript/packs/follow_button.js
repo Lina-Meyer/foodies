@@ -1,8 +1,8 @@
 
-
+window.jquery = $;
 $(document).ready(function () {
   $('.follow-button').click(function() {
-    $(this).innerText = 'angefragt';
+    $(this).text('angefragt');
   });
 });
 
