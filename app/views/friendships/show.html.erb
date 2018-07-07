@@ -13,8 +13,8 @@
           <p> <%= friend.user.ratings.count %> reviews </p>
         </div>
       </div>
-      <div class="unfriend-show">
-        <p> unfriend </p>
+      <div class="unfollow-button">
+        <%= link_to "Unfriend", root_path, method: :post%>
       </div>
     </div>
   <% end %>
