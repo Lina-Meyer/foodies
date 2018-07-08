@@ -10,8 +10,11 @@
     <%end %>
   </div>
   <div class='profile'>
-    <%= link_to user_path(current_user) do %>
-      <i class="far fa-user"></i>
-    <%end %>
+    <% if current_user.nil? %>
+    <% else %>
+      <%= link_to user_path(current_user) do %>
+        <i class="far fa-user"></i>
+      <%end %>
+    <% end %>
   </div>
 </div>

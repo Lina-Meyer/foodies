@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
     #   end
     # end
 
-    @friendships = current_user.friendships
+    @friendships = current_user.friendships.where(status:'accepted')
     @friends = []
     @friendships.each do |friendship|
       @friends << friendship.friend
