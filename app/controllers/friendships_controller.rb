@@ -53,6 +53,19 @@ class FriendshipsController < ApplicationController
     @friendship_second.save
   end
 
+  def edit
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @friendship = @user.friendships.where(friend_id:current_user).first
+    @friendship.status = 'accepted'
+    @friendship_two = current_user.friendships.where(friend_id: @user.id).first
+    @friendship_two.status = 'accepted'
+    @friendship.save
+    @friendship_two.save
+  end
+
   private
 
   def friendship_params

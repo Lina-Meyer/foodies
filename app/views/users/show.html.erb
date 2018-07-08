@@ -32,6 +32,9 @@
       <div class="top-5">
         <i class="fas fa-list-ol"></i>
       </div>
+      <div class="Freundschaftsanfragen">
+        <i class="fas fa-users"></i>
+      </div>
     </div>
     <div class="line-show"></div>
   </div>
@@ -66,6 +69,36 @@
   <div class="wishlist-user">
     <p>1. He</p>
     <p>2. he</p>
+  </div>
+  <div class="Freundschaftsanfragen-list">
+    <p>Freundschaftsanfragen</p>
+    <div class="display-friends">
+      <% if @friends.nil? %>
+        <div style="margin-top:15px;margin-bottom:15px">
+          <div class="line"></div>
+        </div>
+      <% else %>
+        <% @friends.each do |friend| %>
+          <div style="margin-top:15px;margin-bottom:15px">
+            <div class="line"></div>
+          </div>
+          <div class="users-info">
+            <div class="profile-photo">
+              <%= cl_image_tag friend.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar" %>
+            </div>
+            <div class="name">
+              <%= friend.first_name %>
+              <%= friend.last_name %>
+            </div>
+            <%@friendship_this = friend.friendships.where(friend_id: current_user) %>
+            <div class="follow-button" >
+              <%= link_to "Bestätigen", user_friendship_path(friend, @friendship_this), method: :patch%>
+            </div>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
