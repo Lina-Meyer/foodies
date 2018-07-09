@@ -55,12 +55,12 @@ ida_rating_1 = Rating.create!(
   restaurant: monkeys)
 
 friendship_lina_1 = Friendship.create!(
-  status: "accepted",
+  status: "pending",
   user: lina,
   friend: hannah)
 
 friendship_hannah_1 = Friendship.create!(
-  status: "accepted",
+  status: "pending",
   user: hannah,
   friend: lina)
 

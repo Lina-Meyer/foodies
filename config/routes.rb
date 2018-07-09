@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :ratings, only: [:new, :create]
   resources :friendships, only: [:new]
   resources :users, only: [:show, :edit] do
-    resources :friendships, only: [:create, :show]
+    resources :friendships, only: [:create, :show, :edit, :update]
+
   end
 
 end
