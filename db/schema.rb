@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_133545) do
 
   create_table "friendships", force: :cascade do |t|
     t.string "status", default: "pending"
+    t.string "action", default: "no"
     t.bigint "user_id"
     t.bigint "friend_id"
     t.datetime "created_at", null: false

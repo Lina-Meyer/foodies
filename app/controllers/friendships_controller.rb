@@ -44,6 +44,7 @@ class FriendshipsController < ApplicationController
     @friendship.user_id = current_user.id
     @friend = User.find(params[:user_id])
     @friendship.friend_id = @friend.id
+    @friendship.action = "yes"
     @friendship.save
     # andere Seite der Freunschaft
     @friendship_second = Friendship.new

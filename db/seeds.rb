@@ -62,12 +62,14 @@ friendship_lina_1 = Friendship.create!(
 friendship_hannah_1 = Friendship.create!(
   status: "pending",
   user: hannah,
-  friend: lina)
+  friend: lina,
+  action: 'yes')
 
 friendship_lina_2 = Friendship.create!(
   status: "accepted",
   user: lina,
-  friend: fritz)
+  friend: fritz,
+  action: 'yes')
 
 friendship_fritz_2 = Friendship.create!(
   status: "accepted",

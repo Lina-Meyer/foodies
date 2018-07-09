@@ -91,7 +91,7 @@
               <%= friend.last_name %>
             </div>
             <%@friendship_this = friend.friendships.where(friend_id: current_user) %>
-            <div class="follow-button" >
+            <div class="follow-button1" >
               <%= link_to "Bestätigen", user_friendship_path(friend, @friendship_this), method: :patch%>
             </div>
           </div>
@@ -103,3 +103,4 @@
 </div>
 
 <%= javascript_pack_tag 'user-show-hide' %>
+<%= javascript_pack_tag 'follow_button' %>
