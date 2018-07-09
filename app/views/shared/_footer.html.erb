@@ -10,7 +10,11 @@
     <%end %>
   </div>
   <div class='profile'>
-    <%= link_to user_path(current_user) do %>
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user) do %>
+      <i class="far fa-user"></i>
+      <% end %>
+    <% else %>
       <i class="far fa-user"></i>
     <%end %>
   </div>

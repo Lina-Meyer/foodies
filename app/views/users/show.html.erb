@@ -15,9 +15,11 @@
         <p>friends</p>
       </div>
     </div>
-    <div class="edit-profile-show">
-      <h4>Edit profile</h4>
-    </div>
+    <%= link_to edit_user_path(current_user) do %>
+      <div class="edit-profile-show">
+        <h4>Edit profile</h4>
+      </div>
+    <%end %>
   </div>
 
   <div class="user-show-icons">
