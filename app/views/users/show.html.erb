@@ -46,7 +46,7 @@
         <div class="user-review-show">
           <div class="image-user-show">
             <% unless rating.photo.blank? %>
-              <%= cl_image_tag rating.first.photo %>
+              <%= cl_image_tag rating.photo %>
             <% else %>
               <%= image_tag("munich.jpg")%>
             <% end %>

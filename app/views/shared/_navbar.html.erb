@@ -6,20 +6,18 @@
     <% end %>
   </div>
   <!-- Logo -->
+
+
+
   <div class="foodiees-navbar">
-    <% if params[:controller] == 'users' && params[:action] == 'show' || params[:action] == 'edit'  %>
-      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
-    <% else %>
-      <h1>foodiees</h1>
-    <% end %>
+
+      <% if params[:controller] == 'users' && params[:action] == 'show' || params[:action] == 'edit'  %>
+        <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
+      <% else %>
+        <h1>foodiees</h1>
+      <% end %>
+
   </div>
-
-
-
-  <!-- display only on profile page instead of Logo -->
-<!--   <div class="current-user-name-navbar">
-    <%= current_user.first_name %>
-  </div> -->
 
 
   <!-- Right Navigation -->

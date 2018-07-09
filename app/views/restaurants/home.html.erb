@@ -1,77 +1,82 @@
 <div class="wrapper">
-
-  <div class="search-home">
-    <%= form_tag restaurants_path, method: :get do %>
-      <%= text_field_tag :city,
-      params[:city],
-      class:"form-control",
-      placeholder: "Search for city or friend"
-      %>
-      <%= button_tag :submit do %>
-        <i class="fas fa-search"></i>
+<% if @restaurants_pure.nil?  %>
+  <h1> Wilkommen bei foodiees </h1>
+  <p> Einer Plattform für waschechte und befreundete foodies, die untereinander Restaurants und Bars weiterzuempfehlen oder sie auch davor zu warnen. Keine Fake Bewertungen, keine Informationsüberflutung, nur foodieeees unter sich...</p>
+  <p>... weil Freunden vertrauen wir doch immer noch am liebsten... </p>
+<% else %>
+    <div class="search-home">
+      <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city],
+        class:"form-control",
+        placeholder: "Search for city or friend"
+        %>
+        <%= button_tag :submit do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="header-home">
-    <h1>Most popular cities</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
-      <div class="city1">
-        <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
-        <div class="citytext1">
-          <h1>Munich</h1>
+    <div class="header-home">
+      <h1>Most popular cities</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="city1">
+          <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
+          <div class="citytext1">
+            <h1>Munich</h1>
+          </div>
         </div>
-      </div>
-      <div class="city1">
-        <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
-        <div class="citytext1">
-          <h1>Sydney</h1>
+        <div class="city1">
+          <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
+          <div class="citytext1">
+            <h1>Sydney</h1>
+          </div>
         </div>
-      </div>
-      <div class="city1">
-        <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
-        <div class="citytext1">
-          <h1>Barcelona</h1>
+        <div class="city1">
+          <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
+          <div class="citytext1">
+            <h1>Barcelona</h1>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
 
-  <div class="header-home">
-    <h1>Latest reviews</h1>
-  </div>
-  <div class="slideshow-container">
-    <% Rating.all.order('created_at DESC').take(3).each do |r| %>
-      <div class="mySlides1">
-        <% if r.photo == nil  %>
-            <%= image_tag("munich.jpg") %>
-          <% else %>
-            <%= cl_image_tag r.photo %>
-        <% end %>
-        <div class="rating-description">
-          <h4>"<%= r.header %>"</h4>
-          <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
-        </div>
-<!--         <div class="rating-photo">
+    <div class="header-home">
+      <h1>Latest reviews</h1>
+    </div>
+    <div class="slideshow-container">
+      <% Rating.all.order('created_at DESC').take(3).each do |r| %>
+        <div class="mySlides1">
+          <% if r.photo == nil  %>
+              <%= image_tag("munich.jpg") %>
+            <% else %>
+              <%= cl_image_tag r.photo %>
+          <% end %>
+          <div class="rating-description">
+            <h4>"<%= r.header %>"</h4>
             <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
-        </div> -->
-          <div class="rating-star">
-            <i class="fas fa-star"></i> <%= r.stars.to_f %>
           </div>
+  <!--         <div class="rating-photo">
+              <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
+          </div> -->
+            <div class="rating-star">
+              <i class="fas fa-star"></i> <%= r.stars.to_f %>
+            </div>
 
-          <div class="rating-rname-rcity">
-            <%= r.restaurant.name%><span>,</span> <%= r.restaurant.city %>
-          </div>
-      </div>
-    <% end %>
-    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-  </div>
+            <div class="rating-rname-rcity">
+              <%= r.restaurant.name%><span>,</span> <%= r.restaurant.city %>
+            </div>
+        </div>
+      <% end %>
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+  <% end %>
 </div>
 
 
