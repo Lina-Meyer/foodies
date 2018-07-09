@@ -166,3 +166,35 @@
   display: none;
 }
 
+.follow-button1 {
+  background-color: white;
+  border-radius: 2px;
+  border:1px solid $red;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $red;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction: column;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  a {
+    color: $red;
+    text-decoration: none;
+  }
+}
+
+.follow-button1:hover {
+  background-color: $red;
+  border-radius: 2px;
+  border:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

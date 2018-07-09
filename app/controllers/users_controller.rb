@@ -5,8 +5,11 @@ class UsersController < ApplicationController
     @friendships = current_user.friendships.select do |friendship|
       friendship.status == "pending"
     end
+    @friendships_two = @friendships.select do |friendship|
+      friendship.action != 'yes'
+    end
     @friends = []
-    @friendships.each do |friendship|
+    @friendships_two.each do |friendship|
       @friends << friendship.friend
     end
   end

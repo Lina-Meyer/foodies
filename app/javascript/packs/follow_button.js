@@ -6,7 +6,9 @@ $(document).ready(function () {
   });
 });
 
-// function changeText(followbutton){
-//         var follow = document.querySelector('.follow-button');
-//         follow.value = 'angefragt';
-//     };
+
+$(document).ready(function () {
+  $('.follow-button1').click(function() {
+    $(this).text('Freunde');
+  });
+});
