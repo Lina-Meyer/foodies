@@ -6,7 +6,20 @@
     <% end %>
   </div>
   <!-- Logo -->
-  <h1>foodies</h1>
+  <div class="foodiees-navbar">
+    <% if params[:controller] == 'users' && params[:action] == 'show' || params[:action] == 'edit'  %>
+      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
+    <% else %>
+      <h1>foodiees</h1>
+    <% end %>
+  </div>
+
+
+
+  <!-- display only on profile page instead of Logo -->
+<!--   <div class="current-user-name-navbar">
+    <%= current_user.first_name %>
+  </div> -->
 
 
   <!-- Right Navigation -->
@@ -17,22 +30,32 @@
       <!-- Links when logged in -->
 
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-bookie-item">
-        <div class="dropdown">
-          <% if current_user %>
-            <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-              <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+      <% if params[:controller] == 'users' && params[:action] != 'show' || params[:action] == 'edit' %>
+        <div class="navbar-right-if">
+          <%= link_to edit_user_path(current_user) do %>
+            <div class="profile-edit-navbar">
+              <i class="fas fa-cog"></i>
             </div>
-          <ul class="dropdown-menu dropdown-menu-right navbar-bookie-dropdown-menu">
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-          <% end %>
+          <%end %>
         </div>
-      </div>
+      <% else  %>
+        <div class="navbar-bookie-item">
+          <div class="dropdown">
+            <% if current_user %>
+              <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+                <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+              </div>
+            <ul class="dropdown-menu dropdown-menu-right navbar-bookie-dropdown-menu">
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -42,18 +65,26 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <% if user_signed_in? %>
-      <div class="dropdown">
-        <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+      <% if params[:controller] == 'users' && params[:action] == 'show' || params[:action] == 'edit' %>
+        <%= link_to edit_user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="fas fa-cog"></i>
+          </div>
+        <%end %>
+      <% else %>
+        <div class="dropdown">
+          <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar" %>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
         </div>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
+      <% end %>
     <%else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
