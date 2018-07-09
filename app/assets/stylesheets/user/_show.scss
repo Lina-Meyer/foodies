@@ -198,3 +198,27 @@
     text-decoration: none;
   }
 }
+
+.quick-facts {
+  .reviews-all-user:active {
+    i {
+      color:$red
+    }
+  }
+  .wishlist:active {
+    i {
+      color:$red
+    }
+  }
+  .top-5:active {
+    i {
+      color:$red
+    }
+  }
+  .Freundschaftsanfragen:active {
+    i {
+        color:$red
+      }
+  }
+}
+

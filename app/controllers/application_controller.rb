@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  before_action :check_friendship_requests
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -16,5 +18,20 @@ class ApplicationController < ActionController::Base
     { host: ENV["HOST"] || "localhost:3000" }
   end
 
+  def check_friendship_requests
+    if current_user.nil?
+    else
+      @friendships = current_user.friendships.select do |friendship|
+        friendship.status == "pending"
+      end
+      @friendships_two = @friendships.select do |friendship|
+        friendship.action != 'yes'
+      end
+      @friends_application = []
+      @friendships_two.each do |friendship|
+        @friends_application << friendship.friend
+      end
+    end
+  end
 
 end
