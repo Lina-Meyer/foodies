@@ -21,6 +21,15 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
+  h4 {
+    color:white;
+    font-family: 'Noteworthy';
+    font-weight: lighter;
+    letter-spacing: 3px;
+    font-size:20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 /* Logo */
@@ -51,6 +60,14 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
+
+// also: navbar-wagon-right
+
+  .fas {
+  color: white;
+  font-size: 28px;
+  padding-top: 0.8vh;
+  }
 }
 
 /* Navbar link */
@@ -93,3 +110,6 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+
