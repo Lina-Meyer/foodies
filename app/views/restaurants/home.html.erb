@@ -16,8 +16,26 @@
   <div class="header-home">
     <h1>Most popular cities</h1>
   </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-6">
+  <!-- <div class="row"> -->
+    <div class="cities-photos">
+      <div class="city1">
+        <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Munich</h1>
+        </div>
+      </div>
+      <div class="city1">
+        <%= link_to image_tag('sydney.jpg', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Sydney</h1>
+        </div>
+      </div>
+      <div class="city1">
+        <%= link_to image_tag('barcelona.png', class:"intro-image"), restaurants_path %>
+        <div class="citytext1">
+          <h1>Barcelona</h1>
+        </div>
+      </div>
       <div class="city1">
         <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
         <div class="citytext1">
@@ -37,7 +55,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
 
 
@@ -46,9 +64,12 @@
     <h1>Latest reviews</h1>
   </div>
   <div class="slideshow-container">
+   <% if Rating.all.count < 3 %>
+     <h1>There are no ratings yet</h1>
+   <% else %>
     <% Rating.all.order('created_at DESC').take(3).each do |r| %>
       <div class="mySlides1">
-        <% if r.photo == nil  %>
+        <% if r.photo.blank?  %>
             <%= image_tag("munich.jpg") %>
           <% else %>
             <%= cl_image_tag r.photo %>
@@ -69,6 +90,7 @@
           </div>
       </div>
       <% end %>
+    <% end %>
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
   </div>
