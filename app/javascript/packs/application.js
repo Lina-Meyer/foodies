@@ -1,4 +1,5 @@
 import "bootstrap";
+import "jquery-bar-rating";
 
 // toggle button
 $("document").ready(function(){
@@ -29,6 +30,14 @@ $(document).ready(function(){
     currentSection.removeClass("is-active").next().addClass("is-active");
     headerSection.removeClass("is-active").next().addClass("is-active");
   });
+});
+
+
+$(function() {
+  $('#rating_stars').barrating({theme: 'fontawesome-stars'});
+  // $('.review-stars-select').each(function() {
+  //   $(this).barrating({theme: 'fontawesome-stars', readonly: true, emptyValue: 0});
+  // })
 });
 
 
