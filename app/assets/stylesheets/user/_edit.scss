@@ -21,3 +21,31 @@
     font-size: 13px;
   }
 }
+
+.imprint {
+  display: none;
+}
+
+.menu-edit-profile {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-edit-profile-1, .menu-edit-profile-2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $red;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction: column;
+
+  .fas {
+    color: rgba(100, 100, 100, 0.6);
+    font-size: 22px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+}
+
+
