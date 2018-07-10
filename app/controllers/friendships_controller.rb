@@ -35,7 +35,8 @@ class FriendshipsController < ApplicationController
   end
 
   def show
-    @allfriendships = Friendship.all
+    @user_find = User.find(params[:user_id])
+    @allfriendships = @user_find.friendships
   end
 
   def create
