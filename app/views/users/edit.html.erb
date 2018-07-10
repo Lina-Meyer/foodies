@@ -1,23 +1,39 @@
 <div class="wrapper">
-  <h1>Edit profile</h1>
-  <div class="edit-profile">
-    <div class="headers-edit-profile">
-      <h4>Forgot your password?</h4>
+  <div class="line-show"></div>
+  <div class="menu-edit-profile">
+    <div class="menu-edit-profile-1">
+      <i class="fas fa-user-edit"></i>
     </div>
-    <div class="links-edit-profile">
-      <%= link_to edit_user_password_path do %>
-        <h4>Click here</h1>
-      <% end %>
+    <div class="menu-edit-profile-2">
+      <i class="fas fa-paperclip"></i>
     </div>
   </div>
-  <div class="edit-profile">
-    <div class="headers-edit-profile">
-      <h4>Change profile photo</h4>
+  <div class="line-show"></div>
+  <div class="edit-profile-page">
+    <div class="edit-profile">
+      <div class="headers-edit-profile">
+        <h4>Change your password</h4>
+      </div>
+      <div class="links-edit-profile">
+        <%= link_to edit_user_password_path do %>
+          <h4>Click here</h4>
+        <% end %>
+      </div>
     </div>
-    <div class="links-edit-profile">
-      <%= link_to edit_user_password_path do %>
-        <h4>Click here</h1>
-      <% end %>
+    <div class="edit-profile">
+      <div class="headers-edit-profile">
+        <h4>Change profile photo</h4>
+      </div>
+      <div class="links-edit-profile">
+        <%= link_to edit_user_registration_path do %>
+          <h4>Click here</h4>
+        <% end %>
+      </div>
     </div>
+  </div>
+  <div class="imprint">
+    <h1>hello</h1>
   </div>
 </div>
+
+<%= javascript_pack_tag 'edit-profile' %>
