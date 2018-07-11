@@ -60,6 +60,8 @@ class RestaurantsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
+
+    @average = average
   end
 
   def show
@@ -79,6 +81,19 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :zipcode, :country, :city)
+  end
+
+  def average
+    sum = 0
+    number = 0
+    @restaurants.each do |restaurant|
+      restaurant.ratings.each do |rating|
+        number += 1
+        sum += rating.stars
+      end
+    end
+    @average = (sum.to_f/number.to_f).to_f.round(1)
+    return @average
   end
 
 end
