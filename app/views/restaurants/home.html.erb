@@ -15,12 +15,12 @@
 
   <div class="header-home">
     <h1>Have you been there?</h1>
-    <p>Visit the 12 most liveable cities 2018 and share your experience with your favourite foodiees.</p>
   </div>
   <!-- <div class="row"> -->
     <div class="cities-photos">
       <div class="city1">
-        <%= link_to image_tag('Vienna.jpg', class:"intro-image"), restaurants_path %>
+        <%= link_to image_tag('Vienna.jpg', class:"intro-image"), restaurants_path
+       %>
         <div class="citytext1">
           <h1>Vienna</h1>
         </div>
@@ -105,27 +105,29 @@
      <h1>There are no ratings yet</h1>
    <% else %>
     <% Rating.all.order('created_at DESC').take(3).each do |r| %>
-      <div class="mySlides1">
-        <% if r.photo.blank?  %>
-            <%= image_tag("munich.jpg") %>
-          <% else %>
-            <%= cl_image_tag r.photo %>
-        <% end %>
-        <div class="rating-description">
-          <h4>"<%= r.header %>"</h4>
-          <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
-        </div>
-  <!--         <div class="rating-photo">
-              <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
-          </div> -->
-          <div class="rating-star">
-            <i class="fas fa-star"></i> <%= r.stars.to_f %>
+      <%= link_to restaurant_path(r.restaurant) do %>
+        <div class="mySlides1">
+          <% if r.photo.blank?  %>
+              <%= image_tag("munich.jpg") %>
+            <% else %>
+              <%= cl_image_tag r.photo %>
+          <% end %>
+          <div class="rating-description">
+            <h4>"<%= r.header %>"</h4>
+            <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
           </div>
+    <!--         <div class="rating-photo">
+                <p>- <%= r.user.first_name %> <%= r.user.last_name %></p>
+            </div> -->
+            <div class="rating-star">
+              <i class="fas fa-star"></i> <%= r.stars.to_f %>
+            </div>
 
-          <div class="rating-rname-rcity">
-            <%= r.restaurant.name%><span>,</span> <%= r.restaurant.city %>
-          </div>
-      </div>
+            <div class="rating-rname-rcity">
+              <%= r.restaurant.name%><span>,</span> <%= r.restaurant.city %>
+            </div>
+        </div>
+        <% end %>
       <% end %>
     <% end %>
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
