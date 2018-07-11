@@ -25,9 +25,12 @@
                     <div class="center-index-text">
                       <h4><%= restaurant.name %></h4>
                       <p><%= restaurant.city %></p>
+                      <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
+                      <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
+                    <% end %>
                     </div>
                     <div class="stars-index">
-                      <p><i class="fas fa-star"></i> <%= restaurant.ratings.first.stars.to_f %></p>
+                      <p><i class="fas fa-star"></i> <%= @average %></p>
                     </div>
                     <div class="avatar-index">
                       <% if restaurant.users.count > 1 %>

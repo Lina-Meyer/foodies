@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :ratings
   has_many :restaurants, through: :ratings
   has_many :friendships
+  has_many :favorites
+  has_many :favorite_restaurants, through: :favorites, source: :restaurant
 
   validates :first_name, presence:true
   validates :last_name, presence:true

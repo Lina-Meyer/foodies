@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'restaurants#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :restaurants, only: [:index, :show, :create]
+  resources :restaurants, only: [:index, :show, :create] do
+    resources :favorites, only: [:create, :destroy]
+  end
   resources :ratings, only: [:new, :create]
   resources :friendships, only: [:new]
   resources :users, only: [:show, :edit] do

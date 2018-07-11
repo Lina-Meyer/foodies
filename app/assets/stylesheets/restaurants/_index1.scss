@@ -94,4 +94,24 @@
   }
 }
 
+.dislike {
+  margin-top: 6px;
+  color: gray;
+}
+
+.dislike:hover {
+  margin-top: 6px;
+  color: $red;
+}
+
+.like {
+  margin-top: 6px;
+  color: $red;
+}
+
+.like:hover {
+  margin-top: 5px;
+  color: gray;
+}
+
 
