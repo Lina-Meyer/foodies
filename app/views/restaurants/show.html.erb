@@ -1,6 +1,6 @@
 <div class="wrapper-show">
-  <div class="row">
-    <div class="card col-xs-6 col-md-7 restaurant-description">
+  <div class="row-show">
+    <div class="restaurant-description">
       <div class="image-show">
         <% unless @restaurant_show.ratings.first.photo.blank? %>
           <%= cl_image_tag @restaurant_show.ratings.first.photo %>
@@ -9,10 +9,15 @@
         <% end %>
       </div>
       <div class="text-show">
-        <h4><%= @restaurant_show.name %></h4>
-        <p><%= @restaurant_show.city %></p>
-        <p><%= @restaurant_show.country %></p>
-        <p><i class="fas fa-star"></i> <%= @restaurant_show.ratings.first.stars.to_f %></p>
+        <div class="text-show-name">
+          <p><%= @restaurant_show.name %></p>
+        </div>
+        <div class="text-show-city">
+          <p><%= @restaurant_show.city %></p>
+        </div>
+        <div class="text-show-stars">
+          <p><i class="fas fa-star"></i> <%= @restaurant_show.ratings.first.stars.to_f %></p>
+        </div>
       </div>
     </div>
   </div>
