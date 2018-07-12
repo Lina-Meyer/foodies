@@ -35,8 +35,15 @@ class FriendshipsController < ApplicationController
   end
 
   def show
-    @user_find = User.find(params[:user_id])
-    @allfriendships = @user_find.friendships
+    @user_show = User.find(params[:user_id])
+    @friendships_bestätigt = @user_show.friendships.select do |friendship|
+      friendship.status = 'accepted'
+    end
+
+    @friends_bestätigt = []
+    @friendships_bestätigt.each do |friendship|
+      @friends_bestätigt << friendship.friend
+    end
   end
 
   def create
