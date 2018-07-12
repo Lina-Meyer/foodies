@@ -51,10 +51,10 @@
           <div class="image-user-show-facts">
             <div class="name-city-user">
               <h4><%= rating.restaurant.name %></h4>
-              <p><%= rating.restaurant.city %></p>
+              <p><%= rating.restaurant.city %>, <%= rating.restaurant.country %></p>
             </div>
             <div class="stars-user">
-              <p><%= rating.stars %></p>
+              <span><%= rating.stars.to_f %></span> <i class="fas fa-star"></i>
             </div>
           </div>
         </div>

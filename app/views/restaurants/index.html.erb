@@ -23,7 +23,6 @@
                       <% else %>
                         <%= image_tag("munich.jpg") %>
                       <% end %>
-
                       <div class="wishlist-index">
                         <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
                           <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
@@ -49,9 +48,8 @@
                         <% end %>
                       </div>
                     </div>
-
                   </div>
-<div class="line"></div>
+                  <div class="line"></div>
                 <% end %>
               <% end %>
             <% end %>
