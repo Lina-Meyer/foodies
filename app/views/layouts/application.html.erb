@@ -20,10 +20,11 @@
     <%= render 'shared/footer' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5-8TlC2W4MSYxASYqnF-TJfBz_86e5W8"></script>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?query=restaurants&libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag "map" %>
 
+ <!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5-8TlC2W4MSYxASYqnF-TJfBz_86e5W8"></script> -->
+  <!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5-8TlC2W4MSYxASYqnF-TJfBz_86e5W8&libraries=places"></script> -->
 
     <%= render 'shared/footer' %>
   </body>

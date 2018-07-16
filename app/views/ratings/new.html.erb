@@ -17,15 +17,20 @@
       </div>
       <% end %>
 
+      <input id="autocomplete" class='form-control' placeholder="Enter your restaurant" type="text"></input>
 
-      <%= f.input :name, input_html: {class: 'form-control'}  %>
-      <%= f.input :address%>
-      <%= f.input :zipcode %>
-      <%= f.input :country %>
-      <%= f.input :city %>
+      <%= f.input :name, input_html: { id: 'restaurant_name' }  %>
+      <%= f.input :address, input_html: { id: 'route' }%>
+      <%= f.input :zipcode, input_html: { id: 'postal_code' } %>
+      <%= f.input :city, input_html: { id: "administrative_area_level_1" } %>
+      <%= f.input :country, input_html: { id: 'country' }, as: :string %>
       <%= f.submit class: 'submit-button'%>
+
   </div>
   <% end %>
+
+
+
 
   <div class="rating-form section">
     <%= simple_form_for @rating do |f| %>
