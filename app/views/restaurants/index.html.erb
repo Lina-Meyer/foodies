@@ -11,48 +11,86 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div id="restaurants">
-            <% if @restaurants.count <1 %>
-              <div style="width:100%;height:0;padding-bottom:46%;position:relative;"><iframe src="https://giphy.com/embed/9bM8OVru6VNpm" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/food-hungry-empty-9bM8OVru6VNpm"></a></p>
-            <% else %>
-              <% @restaurants.each do |restaurant| %>
-                <%= link_to restaurant_path(restaurant) do %>
-                  <div class="restaurant-flex">
-                    <div class="image-index">
-                      <% unless restaurant.ratings.first.photo.blank? %>
-                        <%= cl_image_tag restaurant.ratings.first.photo %>
-                      <% else %>
-                        <%= image_tag("munich.jpg") %>
+
+        <!-- all restaurants that have more than one review -->
+
+
+              <%= link_to restaurant_path(@restaurant_first) do %>
+                <div class="restaurant-flex">
+                  <div class="image-index">
+                    <% unless @restaurant_first.ratings.first.photo.blank? %>
+                      <%= cl_image_tag @restaurant_first.ratings.first.photo %>
+                    <% else %>
+                      <%= image_tag("munich.jpg") %>
+                    <% end %>
+                    <div class="wishlist-index">
+                      <%= link_to restaurant_favorites_path(@restaurant_first), method: :post, remote: true do %>
+                        <i class="fas fa-heart <%= @restaurant_first.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= @restaurant_first.id %>'></i>
                       <% end %>
-                      <div class="wishlist-index">
-                        <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
-                          <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
-                        <% end %>
-                      </div>
                     </div>
-                    <div class="text-index">
-                      <div class="center-index-text">
-                        <h4><%= restaurant.name %></h4>
-                        <p><%= restaurant.city %></p>
-                      </div>
-                      <div class="stars-index">
-                        <p><i class="fas fa-star"></i> <%= @average %></p>
-                      </div>
-                      <div class="avatar-index">
-                        <% if restaurant.users.count > 1 %>
-                          <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
-                          <div class="plus-number">
-                            <p>+<%= restaurant.users.count - 1 %></p>
-                          </div>
-                        <% else %>
-                          <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
-                        <% end %>
+                  </div>
+                  <div class="text-index">
+                    <div class="center-index-text">
+                      <h4><%= @restaurant_first.name %></h4>
+                      <p><%= @restaurant_first.city %></p>
+                    </div>
+                    <div class="stars-index">
+                      <p><i class="fas fa-star"></i> <%= @average %></p>
+                    </div>
+                    <div class="avatar-index">
+                      <%= cl_image_tag @restaurant_first.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                      <div class="plus-number">
+                        <p>+<%= @all_users.count - 1 %></p>
                       </div>
                     </div>
                   </div>
-                  <div class="line"></div>
-                <% end %>
+                </div>
+                <div class="line"></div>
+              <% end %>
+
+
+            <!-- all restaurants that have only one rating  -->
+
+            <% @restaurants_ohne.each do |restaurant| %>
+              <%= link_to restaurant_path(restaurant) do %>
+                <div class="restaurant-flex">
+                  <div class="image-index">
+                    <% unless restaurant.ratings.first.photo.blank? %>
+                      <%= cl_image_tag restaurant.ratings.first.photo %>
+                    <% else %>
+                      <%= image_tag("munich.jpg") %>
+                    <% end %>
+                    <div class="wishlist-index">
+                      <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
+                        <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="text-index">
+                    <div class="center-index-text">
+                      <h4><%= restaurant.name %></h4>
+                      <p><%= restaurant.city %></p>
+                    </div>
+                    <div class="stars-index">
+                      <p><i class="fas fa-star"></i> <%= @average %></p>
+                    </div>
+                    <div class="avatar-index">
+                      <% if restaurant.users.count > 1 %>
+                        <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                        <div class="plus-number">
+                          <p>+<%= restaurant.users.count - 1 %></p>
+                        </div>
+                      <% else %>
+                        <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                      <% end %>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="line"></div>
               <% end %>
             <% end %>
+
           </div>
         </div>
       </div>
