@@ -13,8 +13,8 @@
           <div id="restaurants">
 
         <!-- all restaurants that have more than one review -->
-
-
+            <% if @restaurants_mit == [] %>
+            <% else %>
               <%= link_to restaurant_path(@restaurant_first) do %>
                 <div class="restaurant-flex">
                   <div class="image-index">
@@ -47,6 +47,7 @@
                 </div>
                 <div class="line"></div>
               <% end %>
+            <% end %>
 
 
             <!-- all restaurants that have only one rating  -->
