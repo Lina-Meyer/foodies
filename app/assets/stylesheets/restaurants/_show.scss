@@ -16,8 +16,15 @@
   padding-bottom: 3vh;
   line-height: 40px;
 
-  .text-show-name p {
-    font-size: 22px;
+  .text-show-name-over12 p {
+    font-size: 16px;
+    margin: 0px;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+
+  .text-show-name-under12 p {
+    font-size: 19px;
     margin: 0px;
     vertical-align: middle;
     font-weight: 400;
