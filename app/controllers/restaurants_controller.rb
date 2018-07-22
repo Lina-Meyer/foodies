@@ -84,13 +84,16 @@ class RestaurantsController < ApplicationController
     else
       @restaurants_mit = []
     end
+    @restaurants_mit = @restaurants_mit.group_by { |d| d[:name] }
+
+
 
     @restaurant_first = @restaurants_mit.first
 
-    @all_users = []
-    @restaurants_mit.each do |restaurant|
-      @all_users << restaurant.users
-    end
+    # @all_users = []
+    # @restaurants_mit.each do |restaurant|
+    #   @all_users << restaurant.users
+    # end
 
     if params[:city].present?
 
