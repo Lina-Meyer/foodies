@@ -15,37 +15,43 @@
         <!-- all restaurants that have more than one review -->
             <% if @restaurants_mit == [] %>
             <% else %>
-              <%= link_to restaurant_path(@restaurant_first) do %>
-                <div class="restaurant-flex">
-                  <div class="image-index">
-                    <% unless @restaurant_first.ratings.first.photo.blank? %>
-                      <%= cl_image_tag @restaurant_first.ratings.first.photo %>
-                    <% else %>
-                      <%= image_tag("munich.jpg") %>
-                    <% end %>
-                    <div class="wishlist-index">
-                      <%= link_to restaurant_favorites_path(@restaurant_first), method: :post, remote: true do %>
-                        <i class="fas fa-heart <%= @restaurant_first.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= @restaurant_first.id %>'></i>
+              <% @restaurants_mit.each do |array| %>
+                <%= link_to restaurant_path(array.second) do %>
+                  <div class="restaurant-flex">
+                    <div class="image-index">
+                      <% unless array.second.first.ratings.first.photo.blank? %>
+                        <%= cl_image_tag array.second.first.ratings.first.photo %>
+                      <% else %>
+                        <%= image_tag("munich.jpg") %>
                       <% end %>
+                      <div class="wishlist-index">
+                        <%= link_to restaurant_favorites_path(array.second), method: :post, remote: true do %>
+                          <i class="fas fa-heart <%= array.second.first.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= array.second.first.id %>'></i>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="text-index">
-                    <div class="center-index-text">
-                      <h4><%= @restaurant_first.name %></h4>
-                      <p><%= @restaurant_first.city %></p>
-                    </div>
-                    <div class="stars-index">
-                      <p><i class="fas fa-star"></i> <%= @average %></p>
-                    </div>
-                    <div class="avatar-index">
-                      <%= cl_image_tag @restaurant_first.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
-                      <div class="plus-number">
-                        <p>+<%= @all_users.count - 1 %></p>
+                    <div class="text-index">
+                      <div class="center-index-text">
+                        <h4><%= array.second.first.name %></h4>
+                        <p><%= array.second.first.city %></p>
+                      </div>
+                      <div class="stars-index">
+                        <p><i class="fas fa-star"></i> <%= @average %></p>
+                      </div>
+                      <div class="avatar-index">
+                        <%= cl_image_tag array.second.first.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                        <div class="plus-number">
+                          <% all = [] %>
+                          <% array.second.each do |user| %>
+                            <% all << user.name %>
+                          <% end %>
+                          <p>+<%= all.count - 1 %></p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="line"></div>
+                  <div class="line"></div>
+                <% end %>
               <% end %>
             <% end %>
 
