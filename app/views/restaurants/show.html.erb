@@ -11,7 +11,15 @@
       </div>
       <div class="text-show">
         <div class="text-show-name">
-          <p><%= @restaurant_show.first.name %></p>
+          <% if @restaurant_show.first.name.length > 12  %>
+            <div class="text-show-name-over12">
+              <p><%= @restaurant_show.first.name %></p>
+            </div>
+          <% else %>
+            <div class="text-show-name-under12">
+              <p><%= @restaurant_show.first.name %></p>
+            </div>
+          <% end %>
         </div>
         <div class="text-show-city">
           <p><%= @restaurant_show.first.city %></p>
