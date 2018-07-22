@@ -10,24 +10,12 @@
   </div>
   <div class="line-show"></div>
   <div class="edit-profile-page">
-    <div class="edit-profile">
-      <div class="headers-edit-profile">
-        <h4>Change your password</h4>
+    <div class="private-information">
+      <div class="private-information-name">
+        <p>Name</p> <p>Email</p><p>Change password</p><p>Change profile photo</p>
       </div>
-      <div class="links-edit-profile">
-        <%= link_to edit_user_password_path do %>
-          <h4>Click here</h4>
-        <% end %>
-      </div>
-    </div>
-    <div class="edit-profile">
-      <div class="headers-edit-profile">
-        <h4>Change profile photo</h4>
-      </div>
-      <div class="links-edit-profile">
-        <%= link_to edit_user_registration_path do %>
-          <h4>Click here</h4>
-        <% end %>
+      <div class="private-information-email">
+         <p><%= current_user.first_name %> <%= current_user.last_name %></p><p><%= current_user.email %></p><p><%= link_to "Click here", edit_user_registration_path %></p><p><%= link_to "Click here", edit_user_registration_path %></p>
       </div>
     </div>
   </div>
