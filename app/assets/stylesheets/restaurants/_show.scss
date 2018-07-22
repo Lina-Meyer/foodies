@@ -63,10 +63,13 @@
   // vertical-align: middle;
 }
 
-.reviews-stars {
+.review-stars {
   // vertical-align: middle;
   text-align: right;
   padding-right: 0px;
+  .fas {
+    color: $red;
+  }
 }
 
 .reviews-description {

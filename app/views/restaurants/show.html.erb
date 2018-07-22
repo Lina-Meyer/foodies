@@ -1,8 +1,9 @@
 <div class="wrapper-show">
   <div class="row-show">
     <div class="restaurant-description">
+
       <div class="image-show">
-        <% unless @restaurant_show.ratings.first.photo.blank? %>
+        <% unless @restaurant_show.first.ratings.first.photo.blank? %>
           <%= cl_image_tag @restaurant_show.ratings.first.photo %>
         <% else %>
           <%= image_tag("munich.jpg") %>
@@ -10,13 +11,13 @@
       </div>
       <div class="text-show">
         <div class="text-show-name">
-          <p><%= @restaurant_show.name %></p>
+          <p><%= @restaurant_show.first.name %></p>
         </div>
         <div class="text-show-city">
-          <p><%= @restaurant_show.city %></p>
+          <p><%= @restaurant_show.first.city %></p>
         </div>
         <div class="text-show-stars">
-          <p><i class="fas fa-star"></i> <%= @restaurant_show.ratings.first.stars.to_f %></p>
+          <p><i class="fas fa-star"></i> <%= @average %></p>
         </div>
       </div>
     </div>
@@ -24,7 +25,7 @@
   <div class="line-show"></div>
   <div class="quick-facts">
     <div class="show-directions">
-      <%= link_to "", ('https://www.google.com/maps/dir/?api=1&destination='+@restaurant_show.address), { :class=>"fas fa-map-marker-alt" } %>
+      <%= link_to "", ('https://www.google.com/maps/dir/?api=1&destination='+@restaurant_show.first.address), { :class=>"fas fa-map-marker-alt" } %>
     </div>
     <div class="wishlist">
       <i class="fas fa-heart"></i>
@@ -35,37 +36,43 @@
   </div>
   <div class="line-show"></div>
 </div>
+
 <div class="wrapper-show-rating">
   <!-- <h2 class="review-header">Reviews</h2> -->
-  <% @restaurant_show.ratings.each do |r| %>
-    <div class="reviews-show">
-      <div class="reviews-avatar-info">
-        <div class="reviews-avatar">
-          <%= link_to user_path do %>
-            <%= cl_image_tag r.user.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar-reviews"   %>
-          <% end %>
-        </div>
-        <div class="reviews-info">
-          <div class="reviews-info-name">
-            <%= r.user.first_name %> <%= r.user.last_name  %>
+  <% @restaurant_show.each do |restaurant| %>
+    <% if @friend_ids.include?(restaurant.user_ids[0]) == true %>
+      <% restaurant.ratings.each do |r| %>
+        <div class="reviews-show">
+          <div class="reviews-avatar-info">
+            <div class="reviews-avatar">
+              <%= link_to user_path do %>
+                <%= cl_image_tag r.user.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar-reviews"   %>
+              <% end %>
+            </div>
+            <div class="reviews-info">
+              <div class="reviews-info-name">
+                <%= r.user.first_name %> <%= r.user.last_name  %>
+              </div>
+              <div class="reviews-info-date">
+                <%= r.created_at.strftime("%b %Y") %>
+              </div>
+            </div>
           </div>
-          <div class="reviews-info-date">
-            <%= r.created_at.strftime("%b %Y") %>
+    <!--       <div class="reviews-stars">
+            <%= r.stars %>
+          </div> -->
+
+          <div class="review-stars">
+            <p><i class="fas fa-star"></i> <%= restaurant.ratings.first.stars.to_f %></p>
           </div>
         </div>
-      </div>
-<!--       <div class="reviews-stars">
-        <%= r.stars %>
+        <div class="reviews-description">
+          <%= r.description %>
+        </div>
+  <!--     <div class="line-reviews">
       </div> -->
-      <div class="review-stars">
-        <%= select_tag "stars", options_for_select((0..5).to_a, r.stars), class: "review-stars-select" %>
-      </div>
-    </div>
-    <div class="reviews-description">
-      <%= r.description %>
-    </div>
-<!--     <div class="line-reviews">
-    </div> -->
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 
