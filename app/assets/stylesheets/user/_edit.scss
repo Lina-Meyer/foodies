@@ -3,6 +3,10 @@
   justify-content: space-between;
 }
 
+.edit-profile-page {
+  margin-top: 5vh;
+}
+
 .headers-edit-profile {
 
   h4 {
@@ -46,6 +50,11 @@
     padding-top: 3vh;
     padding-bottom: 3vh;
   }
+}
+
+.private-information{
+  display: flex;
+  justify-content: space-between;
 }
 
 
