@@ -126,6 +126,20 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant_show = Restaurant.find(params[:id])
+    @restaurant_show = Restaurant.all.where(name: @restaurant_show.name)
+
+    @friend_ids = []
+    current_user.friendships.each do |friendship|
+      @friend_ids << friendship.friend_id
+    end
+    @restaurants_new = []
+    @restaurant_show.each do |restaurant|
+      if @friend_ids.include?(restaurant.user_ids[0])
+        @restaurants_new << restaurant
+      end
+    end
+
+    @average = average_show
   end
 
   def create
@@ -147,6 +161,19 @@ class RestaurantsController < ApplicationController
     sum = 0
     number = 0
     @restaurants.each do |restaurant|
+      restaurant.ratings.each do |rating|
+        number += 1
+        sum += rating.stars
+      end
+    end
+    @average = (sum.to_f/number.to_f).to_f.round(1)
+    return @average
+  end
+
+  def average_show
+    sum = 0
+    number = 0
+    @restaurants_new.each do |restaurant|
       restaurant.ratings.each do |rating|
         number += 1
         sum += rating.stars

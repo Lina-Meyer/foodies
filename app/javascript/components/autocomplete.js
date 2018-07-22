@@ -2,7 +2,7 @@
 var placeSearch, autocomplete;
 var componentForm = {
   route: 'long_name',
-  administrative_area_level_1: 'short_name',
+  administrative_area_level_2: 'short_name',
   country: 'long_name',
   postal_code: 'short_name'
 };
@@ -21,7 +21,7 @@ function autocomplete() {
         var place = autocomplete.getPlace();
         console.log(place)
         for (var component in componentForm) {
-          console.log(component)
+          // console.log(component)
           document.getElementById(component).value = '';
           document.getElementById(component).disabled = false;
         }
@@ -31,13 +31,13 @@ function autocomplete() {
         for (var i = 0; i < place.address_components.length; i++) {
           var addressType = place.address_components[i].types[0];
           console.log (addressType)
-          console.log(componentForm[addressType])
+          // console.log(componentForm[addressType])
           if (componentForm[addressType]) {
             var val = place.address_components[i][componentForm[addressType]];
             document.getElementById(addressType).value = val;
             var name = place.name;
-            console.log(name)
-            console.log(place.place_id)
+            // console.log(name)
+            // console.log(place.place_id)
             document.getElementById('restaurant_name').value = name;
 
           }
