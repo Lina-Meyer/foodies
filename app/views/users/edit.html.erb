@@ -1,4 +1,9 @@
 <div class="wrapper">
+  <div class="user-details">
+    <div class="user-photo-edit">
+      <%= cl_image_tag current_user.photo, width: 200, height: 200, crop: :thumb, gravity: :face%>
+    </div>
+  </div>
   <div class="line-show"></div>
   <div class="menu-edit-profile">
     <div class="menu-edit-profile-1">
