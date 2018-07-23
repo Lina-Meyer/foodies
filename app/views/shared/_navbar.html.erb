@@ -28,14 +28,19 @@
       <!-- Links when logged in -->
 
       <!-- Avatar with dropdown menu -->
-      <% if params[:controller] == 'users' && params[:action] != 'show' || params[:action] == 'edit' %>
-        <div class="navbar-right-if">
-          <%= link_to edit_user_path(current_user) do %>
-            <div class="profile-edit-navbar">
-              <i class="fas fa-cog"></i>
-            </div>
-          <%end %>
-        </div>
+      <% if params[:controller] == 'users' && params[:action] == 'show'%>
+        <%= link_to edit_user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="fas fa-cog"></i>
+          </div>
+        <%end %>
+      <% elsif params[:controller] == 'users' &&  params[:action] == 'edit' %>
+        <%= link_to user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        <%end %>
+
       <% else  %>
         <div class="navbar-bookie-item">
           <div class="dropdown">
@@ -63,10 +68,16 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <% if user_signed_in? %>
-      <% if params[:controller] == 'users' && params[:action] == 'show' || params[:action] == 'edit' %>
+      <% if params[:controller] == 'users' && params[:action] == 'show'%>
         <%= link_to edit_user_path(current_user) do %>
           <div class="profile-edit-navbar">
             <i class="fas fa-cog"></i>
+          </div>
+        <%end %>
+      <% elsif params[:controller] == 'users' &&  params[:action] == 'edit' %>
+        <%= link_to user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="fas fa-check-circle"></i>
           </div>
         <%end %>
       <% else %>

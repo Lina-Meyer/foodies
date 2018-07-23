@@ -3,6 +3,18 @@
   justify-content: space-between;
 }
 
+.user-photo-edit img {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+}
+
+.user-photo-edit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .edit-profile-page {
   margin-top: 5vh;
 }
@@ -56,5 +68,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.private-information-email {
+  a {
+    color: black;
+    opacity: 0.8;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 
 
