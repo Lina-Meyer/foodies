@@ -62,8 +62,28 @@
     <% end %>
   </div>
   <div class="wishlist-user">
-    <p>1. He</p>
-    <p>2. he</p>
+    <% current_user.favorites.each do |f| %>
+      <%= link_to restaurant_path(f.restaurant) do %>
+        <div class="user-review-show">
+          <div class="image-user-show">
+            <% unless f.restaurant.ratings.first.photo.blank? %>
+              <%= cl_image_tag ratings.first.photo %>
+            <% else %>
+              <%= image_tag("munich.jpg")%>
+            <% end %>
+          </div>
+          <div class="image-user-show-facts">
+            <div class="name-city-user">
+              <h4><%= f.restaurant.name %></h4>
+              <p><%= f.restaurant.city %> <%= f.restaurant.country %></p>
+            </div>
+            <div class="stars-user">
+              <span><%= @average.to_f %></span> <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
   <div class="freundschaftsanfragen-list">
     <p>Freundschaftsanfragen</p>
