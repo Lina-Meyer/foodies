@@ -1,0 +1,25 @@
+.edit-password-devise h2 {
+  font-family: $body-font;
+  color: black;
+  opacity: 0.8;
+  font-size: 21px;
+  margin-top: 0;
+}
+
+.form-actions {
+    color: $red;
+    display: flex;
+    width: 30vw;
+    margin: 0 auto;
+
+    .btn {
+      background-color: white;
+      width: 30vw;
+      border-radius: 2px;
+      border:1px solid $red;
+      color: $red;
+      box-shadow: none;
+      margin-top: 15px;
+    }
+
+}

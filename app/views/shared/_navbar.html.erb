@@ -40,7 +40,12 @@
             <i class="fas fa-check-circle"></i>
           </div>
         <%end %>
-
+      <% elsif params[:controller] == 'devise/registrations' &&  params[:action] == 'edit' %>
+        <%= link_to user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="far fa-caret-square-left"></i>
+          </div>
+        <%end %>
       <% else  %>
         <div class="navbar-bookie-item">
           <div class="dropdown">
@@ -78,6 +83,12 @@
         <%= link_to user_path(current_user) do %>
           <div class="profile-edit-navbar">
             <i class="fas fa-check-circle"></i>
+          </div>
+        <%end %>
+      <% elsif params[:controller] == 'devise/registrations' &&  params[:action] == 'edit' %>
+        <%= link_to user_path(current_user) do %>
+          <div class="profile-edit-navbar">
+            <i class="far fa-caret-square-left"></i>
           </div>
         <%end %>
       <% else %>

@@ -2,10 +2,13 @@
   <div class="user-details">
     <div class="user-photo-edit">
       <%= cl_image_tag current_user.photo, width: 200, height: 200, crop: :thumb, gravity: :face%>
+      <div class="edit-photo">
+        <i class="fas fa-plus-circle"></i>
+      </div>
     </div>
   </div>
   <div class="line-show"></div>
-  <div class="menu-edit-profile">
+<!--   <div class="menu-edit-profile">
     <div class="menu-edit-profile-1">
       <i class="fas fa-user-edit"></i>
     </div>
@@ -13,15 +16,19 @@
       <i class="fas fa-paperclip"></i>
     </div>
   </div>
-  <div class="line-show"></div>
+  <div class="line-show"></div> -->
   <div class="edit-profile-page">
+    <h4>Private information</h4>
     <div class="private-information">
       <div class="private-information-name">
-        <p>Name</p> <p>Email</p><p>Change password</p><p>Change profile photo</p>
+        <p>Name</p> <p>Email</p><p>Change password</p>
       </div>
       <div class="private-information-email">
-         <p><%= current_user.first_name %> <%= current_user.last_name %></p><p><%= current_user.email %></p><p><%= link_to "Click here", edit_user_registration_path %></p><p><%= link_to "Click here", edit_user_registration_path %></p>
+         <p><%= current_user.first_name %> <%= current_user.last_name %></p><p><%= current_user.email %></p><p><%= link_to "Click here", edit_user_registration_path %></p>
       </div>
+    </div>
+    <div class="show-imprint">
+      <p>Impressum</p>
     </div>
   </div>
   <div class="imprint">
