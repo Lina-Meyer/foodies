@@ -8,36 +8,85 @@
   margin-left: -2.5vh;
 }
 
-.text-show {
-  vertical-align: middle;
+.zeile2 {
   display: flex;
-  justify-content: space-around;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
   line-height: 40px;
-
-  .text-show-name-over12 p {
-    font-size: 16px;
-    margin: 0px;
-    vertical-align: middle;
-    font-weight: 400;
+  .zeile2-stars {
+    padding-right:5px;
+    color: $red;
   }
-
-  .text-show-name-under12 p {
-    font-size: 19px;
-    margin: 0px;
-    vertical-align: middle;
-    font-weight: 400;
+  .zeile2-zahl {
+    color: gray;
   }
+}
 
-  .text-show-stars p, .text-show-city p {
-    font-size: 17px;
-    margin: 0px;
-    vertical-align: middle;
+.zeile1 {
+  padding-top: 5px;
+  display:flex;
+  justify-content: space-between;
+  .zeile2 {
+    display: flex;
+    line-height: 40px;
+    .zeile2-stars {
+      padding-right:5px;
+      color: $red;
+    }
+    .zeile2-zahl {
+      color: gray;
+    }
   }
+}
+
+.text-show-name-under12 p {
+  font-size: 21px;
+  margin: 0px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.text-show {
+  // vertical-align: middle;
+  // display: flex;
+  // justify-content: space-around;
+  // padding-top: 3vh;
+  // padding-bottom: 3vh;
+  // line-height: 40px;
+
+  // .text-show-stars p, .text-show-city p {
+  //   font-size: 17px;
+  //   margin: 0px;
+  //   vertical-align: middle;
+  // }
 
   .fas {
     color: $red;
+  }
+  .Ort {
+    display: flex;
+    .marker {
+      padding-right:20px;
+    }
+  }
+
+  .Telefon {
+    display:flex;
+    .marker {
+      padding-right:20px;
+    }
+  }
+
+  .Website {
+    display:flex;
+    .marker {
+      padding-right:20px;
+    }
+  }
+
+  .Öffnungszeiten {
+    display: flex;
+    .marker {
+      padding-right:20px;
+    }
   }
 }
 

@@ -1,3 +1,5 @@
+
+
 <div class="wrapper-show">
   <div class="row-show">
     <div class="restaurant-description">
@@ -9,24 +11,63 @@
           <%= image_tag("munich.jpg") %>
         <% end %>
       </div>
+      <div class='zeile1'>
+        <div class="text-show-name-under12">
+          <p><%= @restaurant_show.first.name %></p>
+        </div>
+        <div class='zeile2'>
+          <div class="zeile2-stars">
+            <p><i class="fas fa-star"></i> <%= @average %></p>
+          </div>
+          <div class="zeile2-zahl">
+            (<%= @restaurants_new.length %>)
+          </div>
+        </div>
+      </div>
       <div class="text-show">
-        <div class="text-show-name">
-          <% if @restaurant_show.first.name.length > 12  %>
-            <div class="text-show-name-over12">
-              <p><%= @restaurant_show.first.name %></p>
-            </div>
-          <% else %>
-            <div class="text-show-name-under12">
-              <p><%= @restaurant_show.first.name %></p>
-            </div>
-          <% end %>
+        <div class="Ort">
+          <div class="marker">
+            <p><i class="fas fa-map-marker-alt"></i></p>
+          </div>
+          <div class="text">
+            <p> <%= @restaurant_show.first.address%>, <%= @restaurant_show.first.zipcode %> <%= @restaurant_show.first.city %></p>
+          </div>
         </div>
-        <div class="text-show-city">
-          <p><%= @restaurant_show.first.city %></p>
+
+        <div class="Telefon">
+          <div class="marker">
+            <p><i class="fas fa-phone"></i></p>
+          </div>
+          <div class="text">
+            <div id='phone'></div>
+          </div>
         </div>
-        <div class="text-show-stars">
-          <p><i class="fas fa-star"></i> <%= @average %></p>
+
+        <div class="Website">
+          <div class="marker">
+            <p><i class="fas fa-file"></i></p>
+          </div>
+          <div class="text">
+            <div id='website'></div>
+          </div>
         </div>
+
+        <div class="Öffnungszeiten">
+          <div class="marker">
+            <p><i class="fas fa-hourglass-start"></i></p>
+          </div>
+          <div class="text">
+            <div id='opening-hours'></div>
+          </div>
+        </div>
+
+        <div class="phone-number">
+         <div id="placeid" style="display: none"><%=@restaurant_show.first.place_id %></div>
+         <div id='phone'></div>
+         <div id= "website"></div>
+         <div id= 'opening-hours'></div>
+        </div>
+
       </div>
     </div>
   </div>
