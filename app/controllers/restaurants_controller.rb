@@ -154,7 +154,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :zipcode, :country, :city)
+    params.require(:restaurant).permit(:name, :address, :zipcode, :country, :city, :place_id)
   end
 
   def average

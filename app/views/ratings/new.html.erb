@@ -24,6 +24,7 @@
       <%= f.input :zipcode, input_html: { id: 'postal_code' } %>
       <%= f.input :city, input_html: { id: "administrative_area_level_2" } %>
       <%= f.input :country, input_html: { id: 'country' }, as: :string %>
+      <%= f.input :place_id, input_html: { id: 'place_id' }, as: :hidden %>
       <%= f.submit class: 'submit-button'%>
 
   </div>
