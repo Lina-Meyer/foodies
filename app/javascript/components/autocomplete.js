@@ -82,8 +82,11 @@ function autocomplete() {
 //     }
 //   }
 // }
+if (document.getElementById('placeid') == null) { var placeid = "leer"}
+else {
 var placeid = document.getElementById('placeid').innerHTML
 console.log(placeid)
+}
 
 
 var request = {
