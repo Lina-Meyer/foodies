@@ -11,4 +11,5 @@ class Restaurant < ApplicationRecord
     user.favorite_restaurants.include?(self) if user.favorite_restaurants
   end
 
+
 end
