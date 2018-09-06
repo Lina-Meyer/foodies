@@ -5,10 +5,9 @@
 .restaurant-flex {
   display: flex;
   justify-content: space-between;
-  // border: 0.6px solid RGBA(170, 170, 170, 0.2);
-//   border-radius: 7px;
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.05);
   margin-top: 3.6vh;
+  border-top: 1px solid RGBA(25, 25, 25, 0.2);
+  border-bottom: 1px solid RGBA(25, 25, 25, 0.2);
   margin-bottom: 3.6vh;
 }
 
@@ -59,7 +58,7 @@
 
 .avatar-index {
   position: absolute;
-  top: -10%;
+  top: -20%;
   right: 1vh;
   display: flex;
   justify-content: space-between;
