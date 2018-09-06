@@ -21,11 +21,26 @@
   width: 30vh;
   position: relative;
   vertical-align: middle;
-  padding-left: 10px;
+}
+
+
+.atmosphere-index {
+  position: absolute;
+  left: 0vh;
+  bottom: 0px;
+  p {
+  border: 1px solid $red;
+  background-color: $red;
+  width:fit-content;
+  width:-webkit-fit-content;
+  width:-moz-fit-content;
+  border-radius: 9px;
+  padding: 0px 10px;
+  }
 }
 
 .center-index-text {
-  padding-top: 3vh;
+  padding-top: 1.7vh;
 
   h4 {
     font-size: 20px;
@@ -100,6 +115,7 @@
     font-size: 15px;
     color: black;
     opacity: 0.8;
+    margin: 0px;
   }
 }
 
