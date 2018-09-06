@@ -77,6 +77,9 @@
                     <div class="center-index-text">
                       <h4><%= restaurant.name %></h4>
                       <p><%= restaurant.city %></p>
+                      <div class="atmosphere-index">
+                        <p style='font-size: 11px; color: white;'><%= restaurant.ratings.first.atmosphere %></p>
+                      </div>
                     </div>
                     <div class="stars-index">
                       <p><i class="fas fa-star"></i> <%= @average %></p>
