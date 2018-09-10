@@ -4,6 +4,26 @@
   position: relative;
 }
 
+.no-reviews-yet {
+  text-align: center;
+
+  span {
+    color: $red;
+  }
+
+  span:focus {
+    outline: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a {
+    color: black;
+  }
+}
+
 .details {
   position: absolute;
   right: 0px;
@@ -112,6 +132,11 @@
 
 .wishlist-user {
   margin-top: 5vh;
+  text-align: center;
+
+  .fa-heart {
+    color: $red;
+  }
 }
 
 .freundschaftsanfragen-list {
