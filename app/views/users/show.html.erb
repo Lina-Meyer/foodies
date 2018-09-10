@@ -38,52 +38,66 @@
     <div class="line-show"></div>
   </div>
   <div class="user-reviews">
-    <% @user_show.ratings.each do |rating| %>
-      <%= link_to restaurant_path(rating.restaurant) do %>
-        <div class="user-review-show">
-          <div class="image-user-show">
-            <% unless rating.photo.blank? %>
-              <%= cl_image_tag rating.photo %>
-            <% else %>
-              <%= image_tag("munich.jpg")%>
-            <% end %>
-          </div>
-          <div class="image-user-show-facts">
-            <div class="name-city-user">
-              <h4><%= rating.restaurant.name %></h4>
-              <p><%= rating.restaurant.city %></p>
+    <% if @user_show.ratings.count > 0 %>
+      <% @user_show.ratings.each do |rating| %>
+        <%= link_to restaurant_path(rating.restaurant) do %>
+          <div class="user-review-show">
+            <div class="image-user-show">
+              <% unless rating.photo.blank? %>
+                <%= cl_image_tag rating.photo %>
+              <% else %>
+                <%= image_tag("munich.jpg")%>
+              <% end %>
             </div>
-            <div class="stars-user">
-              <span><%= rating.stars.to_f %></span> <i class="fas fa-star"></i>
+            <div class="image-user-show-facts">
+              <div class="name-city-user">
+                <h4><%= rating.restaurant.name %></h4>
+                <p><%= rating.restaurant.city %></p>
+              </div>
+              <div class="stars-user">
+                <span><%= rating.stars.to_f %></span> <i class="fas fa-star"></i>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="no-reviews-yet">
+        <p> Add your first review of your favourite restaurant or bar
+          <%= link_to new_rating_path do %>
+            <span>here</span>.
+          <% end %>
+        </p>
+      </div>
     <% end %>
   </div>
   <div class="wishlist-user">
-    <% current_user.favorites.each do |f| %>
-      <%= link_to restaurant_path(f.restaurant) do %>
-        <div class="user-review-show">
-          <div class="image-user-show">
-            <% unless f.restaurant.ratings.first.photo.blank? %>
-              <%= cl_image_tag ratings.first.photo %>
-            <% else %>
-              <%= image_tag("munich.jpg")%>
-            <% end %>
-          </div>
-          <div class="image-user-show-facts">
-            <div class="name-city-user">
-              <h4><%= f.restaurant.name %></h4>
-              <p><%= f.restaurant.city %> <%= f.restaurant.country %></p>
+    <% if @user_show.ratings.count > 0 %>
+      <% current_user.favorites.each do |f| %>
+        <%= link_to restaurant_path(f.restaurant) do %>
+          <div class="user-review-show">
+            <div class="image-user-show">
+              <% unless f.restaurant.ratings.first.photo.blank? %>
+                <%= cl_image_tag ratings.first.photo %>
+              <% else %>
+                <%= image_tag("munich.jpg")%>
+              <% end %>
             </div>
-            <div class="stars-user">
-              <span><%= @average.to_f %></span> <i class="fas fa-star"></i>
+            <div class="image-user-show-facts">
+              <div class="name-city-user">
+                <h4><%= f.restaurant.name %></h4>
+                <p><%= f.restaurant.city %> <%= f.restaurant.country %></p>
+              </div>
+              <div class="stars-user">
+                <span><%= @average.to_f %></span> <i class="fas fa-star"></i>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    <% else %>
+      <p> Have your friends already reviewed an amazing restaurant or bar you want to visit as well? Add it to your wishlist by clicking on the <i class="fas fa-heart"></i> of the specific restaurant or bar and start planning your visit.</p>
+    <% end  %>
   </div>
   <div class="freundschaftsanfragen-list">
     <p>Freundschaftsanfragen</p>
@@ -91,6 +105,7 @@
       <% if @friends.nil? %>
         <div style="margin-top:15px;margin-bottom:15px">
           <div class="line"></div>
+          <p> You don't have any friendship requests at the moment!</p>
         </div>
       <% else %>
         <% @friends.each do |friend| %>
