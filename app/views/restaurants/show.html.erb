@@ -6,7 +6,7 @@
 
       <div class="image-show">
         <% unless @restaurant_show.first.ratings.first.photo.blank? %>
-          <%= cl_image_tag @restaurant_show.ratings.first.photo %>
+          <%= cl_image_tag @restaurant_show.first.ratings.first.photo %>
         <% else %>
           <%= image_tag("munich.jpg") %>
         <% end %>
