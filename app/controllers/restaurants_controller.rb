@@ -164,6 +164,8 @@ class RestaurantsController < ApplicationController
 
   end
 
+
+
   private
 
   def restaurant_params

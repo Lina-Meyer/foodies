@@ -10,6 +10,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-
+    @favorite
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @favorite = Favorite.all.where(restaurant_id: @restaurant)
+    @favorite.first.destroy
   end
 end
