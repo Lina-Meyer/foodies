@@ -36,7 +36,7 @@
                         <p><%= array.second.first.city %></p>
                       </div>
                       <div class="stars-index">
-                        <p><i class="fas fa-star"></i> <%= @average %></p>
+                        <p><i class="fas fa-star"></i> <%= @average_mit %></p>
                       </div>
                       <div class="avatar-index">
                         <%= cl_image_tag array.second.first.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
@@ -82,7 +82,7 @@
                       </div>
                     </div>
                     <div class="stars-index">
-                      <p><i class="fas fa-star"></i> <%= @average %></p>
+                      <p><i class="fas fa-star"></i> <%= @average_ohne %></p>
                     </div>
                     <div class="avatar-index">
                       <% if restaurant.users.count > 1 %>

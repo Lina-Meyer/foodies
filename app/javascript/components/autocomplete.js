@@ -36,7 +36,7 @@ function autocomplete() {
           if (componentForm[addressType]) {
             var val = place.address_components[i][componentForm[addressType]];
             document.getElementById(addressType).value = val;
-            var name = place.name;
+              var name = place.name;
             // console.log(name)
             // console.log(place.place_id)
             document.getElementById('restaurant_name').value = name;

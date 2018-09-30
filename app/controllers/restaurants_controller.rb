@@ -108,9 +108,21 @@ class RestaurantsController < ApplicationController
 
     #index map
 
-    @restaurants_map = @restaurants.select do |restaurant|
+    @restaurants_all_map = []
+    @restaurants_ohne.each do |restaurant|
+      @restaurants_all_map << restaurant
+    end
+    @restaurants_mit.each do |restaurant|
+      restaurant.second.each do |restaurant|
+        @restaurants_all_map << restaurant
+      end
+    end
+
+
+    @restaurants_map = @restaurants_all_map.select do |restaurant|
       restaurant.latitude != nil && restaurant.longitude != nil
     end
+
 
 
     @markers = @restaurants_map.map do |restaurant|
@@ -121,7 +133,8 @@ class RestaurantsController < ApplicationController
       }
     end
 
-    @average = average
+    @average_ohne = average_ohne
+    @average_mit = average_mit
   end
 
   def show
@@ -157,13 +170,30 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:name, :address, :zipcode, :country, :city, :place_id)
   end
 
-  def average
+  def average_ohne
+
     sum = 0
     number = 0
-    @restaurants.each do |restaurant|
+    @restaurants_ohne.each do |restaurant|
       restaurant.ratings.each do |rating|
         number += 1
         sum += rating.stars
+      end
+    end
+    @average = (sum.to_f/number.to_f).to_f.round(1)
+    return @average
+  end
+
+  def average_mit
+
+    sum = 0
+    number = 0
+    @restaurants_mit.each do |restaurant|
+      restaurant.second.each do |r|
+        r.ratings.each do |rating|
+          number += 1
+          sum += rating.stars
+        end
       end
     end
     @average = (sum.to_f/number.to_f).to_f.round(1)
