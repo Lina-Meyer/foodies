@@ -33,6 +33,14 @@
       </div>
       <div class="Freundschaftsanfragen">
         <i class="fas fa-users"></i>
+        <div class="Zahl">
+          <% if @friends == [] %>
+          <% else %>
+            <div class="counter2">
+              <%= @friends.count %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="line-show"></div>
@@ -100,7 +108,7 @@
     <% end  %>
   </div>
   <div class="freundschaftsanfragen-list">
-    <p>Freundschaftsanfragen</p>
+    <p>Your friendship requests</p>
     <div class="display-friends">
       <% if @friends.nil? %>
         <div style="margin-top:15px;margin-bottom:15px">
