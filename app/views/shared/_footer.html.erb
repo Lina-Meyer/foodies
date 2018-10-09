@@ -1,26 +1,32 @@
 <div class='footer'>
-  <div class='home'>
-    <%= link_to root_path do %>
-      <i class="fas fa-home"></i>
-    <%end %>
-  </div>
-  <div class='search'>
-    <%= link_to new_friendship_path do %>
-      <i class="fas fa-search"></i>
-    <%end %>
-  </div>
-  <div class='profile'>
-    <% if current_user.nil? %>
-    <% else %>
-      <%= link_to user_path(current_user) do %>
-        <i class="far fa-user"></i>
+  <% if current_user.nil? %>
+    <div class="footer-note">
+      <p>"Tripadvisor for friends" - wait, what? <i class="fas fa-arrow-circle-right"></i></p>
+    </div>
+  <% else %>
+    <div class='home'>
+      <%= link_to root_path do %>
+        <i class="fas fa-home"></i>
       <%end %>
-      <% if @friends_application == [] %>
+    </div>
+    <div class='search'>
+      <%= link_to new_friendship_path do %>
+        <i class="fas fa-search"></i>
+      <%end %>
+    </div>
+    <div class='profile'>
+      <% if current_user.nil? %>
       <% else %>
-        <div class="counter">
-          <%= @friends_application.count %>
-        </div>
+        <%= link_to user_path(current_user) do %>
+          <i class="far fa-user"></i>
+        <%end %>
+        <% if @friends_application == [] %>
+        <% else %>
+          <div class="counter">
+            <%= @friends_application.count %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
