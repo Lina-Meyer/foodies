@@ -1,8 +1,12 @@
 <div class="navbar-wagon">
   <!-- Add button -->
   <div class="navbar-wagon-left">
-    <%= link_to new_rating_path do  %>
-      <i class="far fa-plus-square"></i>
+    <% if user_signed_in? %>
+      <%= link_to new_rating_path do  %>
+        <i class="far fa-plus-square"></i>
+      <% end %>
+    <% else %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
   <!-- Logo -->
@@ -109,7 +113,7 @@
         </div>
       <% end %>
     <%else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 </div>
