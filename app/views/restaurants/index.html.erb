@@ -69,7 +69,7 @@
                         <%= cl_image_tag restaurant.ratings.first.photo %>
                       <% else %>
                         <%= image_tag("munich.jpg") %>
-
+                      <% end %>
                       <div class="wishlist-index">
                         <% if restaurant.liked?(current_user) == true %>
 
