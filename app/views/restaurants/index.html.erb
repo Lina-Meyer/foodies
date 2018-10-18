@@ -16,8 +16,9 @@
             <% if @restaurants_mit == [] %>
             <% else %>
               <% @restaurants_mit.each do |array| %>
+                <div class="restaurant-flex">
                 <%= link_to restaurant_path(array.second) do %>
-                  <div class="restaurant-flex">
+
                     <div class="image-index">
                       <% unless array.second.first.ratings.first.photo.blank? %>
                         <%= cl_image_tag array.second.first.ratings.first.photo %>
@@ -49,9 +50,10 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+
                  <!--  <div class="line"></div> -->
-                <% end %>
+                  <% end %>
+                 </div>
               <% end %>
             <% end %>
 
@@ -59,56 +61,58 @@
             <!-- all restaurants that have only one rating  -->
 
             <% @restaurants_ohne.each do |restaurant| %>
-              <%= link_to restaurant_path(restaurant) do %>
+
                 <div class="restaurant-flex">
-                  <div class="image-index">
-                    <% unless restaurant.ratings.first.photo.blank? %>
-                      <%= cl_image_tag restaurant.ratings.first.photo %>
-                    <% else %>
-                      <%= image_tag("munich.jpg") %>
-                    <% end %>
-                    <div class="wishlist-index">
-                      <% if restaurant.liked?(current_user) == true %>
-
-                        <%= link_to restaurant_favorite_path(restaurant, restaurant.favorites), method: :delete do %>
-
-
-                        <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
-                         <% end %>
+                  <%= link_to restaurant_path(restaurant) do %>
+                    <div class="image-index">
+                      <% unless restaurant.ratings.first.photo.blank? %>
+                        <%= cl_image_tag restaurant.ratings.first.photo %>
                       <% else %>
-                        <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
-                          <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
-                        <% end %>
-                      <% end %>
+                        <%= image_tag("munich.jpg") %>
 
-                    </div>
-                  </div>
-                  <div class="text-index">
-                    <div class="center-index-text">
-                      <h4><%= restaurant.name %></h4>
-                      <p><%= restaurant.city %></p>
-                      <div class="atmosphere-index">
-                        <p style='font-size: 11px; color: white;'><%= restaurant.ratings.first.atmosphere %></p>
+                      <div class="wishlist-index">
+                        <% if restaurant.liked?(current_user) == true %>
+
+                          <%= link_to restaurant_favorite_path(restaurant, restaurant.favorites), method: :delete do %>
+
+
+                          <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
+                           <% end %>
+                        <% else %>
+                          <%= link_to restaurant_favorites_path(restaurant), method: :post, remote: true do %>
+                            <i class="fas fa-heart <%= restaurant.liked?(current_user) ? "like" : "dislike"  %>" id='favorite-restaurant-<%= restaurant.id %>'></i>
+                          <% end %>
+                        <% end %>
+
                       </div>
                     </div>
-                    <div class="stars-index">
-                      <p><i class="fas fa-star"></i> <%= @average_ohne %></p>
-                    </div>
-                    <div class="avatar-index">
-                      <% if restaurant.users.count > 1 %>
-                        <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
-                        <div class="plus-number">
-                          <p>+<%= restaurant.users.count - 1 %></p>
+                    <div class="text-index">
+                      <div class="center-index-text">
+                        <h4><%= restaurant.name %></h4>
+                        <p><%= restaurant.city %></p>
+                        <div class="atmosphere-index">
+                          <p style='font-size: 11px; color: white;'><%= restaurant.ratings.first.atmosphere %></p>
                         </div>
-                      <% else %>
-                        <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
-                      <% end %>
+                      </div>
+                      <div class="stars-index">
+                        <p><i class="fas fa-star"></i> <%= @average_ohne %></p>
+                      </div>
+                      <div class="avatar-index">
+                        <% if restaurant.users.count > 1 %>
+                          <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                          <div class="plus-number">
+                            <p>+<%= restaurant.users.count - 1 %></p>
+                          </div>
+                        <% else %>
+                          <%= cl_image_tag restaurant.users.first.photo, width: 140, height: 140, crop: :thumb, gravity: :face, class:"avatar"   %>
+                        <% end %>
 
+                      </div>
                     </div>
-                  </div>
-                </div>
+
                 <!-- <div class="line"></div> -->
-              <% end %>
+                  <% end %>
+              </div>
             <% end %>
           </div>
         <!-- </div> -->

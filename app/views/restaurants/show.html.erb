@@ -48,7 +48,7 @@
             <p><i class="fas fa-file"></i></p>
           </div>
           <div class="text">
-            <div id='website'></div>
+            <div id='website'> <%= link_to 'website'%></div>
           </div>
         </div>
 
@@ -64,7 +64,8 @@
         <div class="phone-number">
          <div id="placeid" style="display: none"><%=@restaurant_show.first.place_id %></div>
          <div id='phone'></div>
-         <div id= "website"></div>
+         <%= link_to 'website' %>
+         <div id= "website"> </div>
          <div id= 'opening-hours'></div>
         </div>
 
