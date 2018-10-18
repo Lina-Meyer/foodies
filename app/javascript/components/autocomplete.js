@@ -107,6 +107,7 @@ function callback(place, status) {
     document.getElementById('phone').innerHTML = place.formatted_phone_number
     document.getElementById('website').innerHTML = place.website
     var open = document.getElementById('opening-hours')
+    var website = place.website
 
     if (place.opening_hours.open_now == true) {
       open.innerHTML = 'geöffnet'

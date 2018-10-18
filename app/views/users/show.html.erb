@@ -85,8 +85,9 @@
         <%= link_to restaurant_path(f.restaurant) do %>
           <div class="user-review-show">
             <div class="image-user-show">
+
               <% unless f.restaurant.ratings.first.photo.blank? %>
-                <%= cl_image_tag ratings.first.photo %>
+                <%= cl_image_tag f.restaurant.ratings.first.photo %>
               <% else %>
                 <%= image_tag("munich.jpg")%>
               <% end %>
