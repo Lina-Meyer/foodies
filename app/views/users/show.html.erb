@@ -109,14 +109,14 @@
     <% end  %>
   </div>
   <div class="freundschaftsanfragen-list">
-    <p>Your friendship requests</p>
     <div class="display-friends">
-      <% if @friends.nil? %>
+      <% if @friends.empty? %>
         <div style="margin-top:15px;margin-bottom:15px">
           <div class="line"></div>
           <p> You don't have any friendship requests at the moment!</p>
         </div>
       <% else %>
+        <p>Your friendship requests</p>
         <% @friends.each do |friend| %>
           <div style="margin-top:15px;margin-bottom:15px">
             <div class="line"></div>
