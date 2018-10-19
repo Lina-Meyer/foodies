@@ -1,5 +1,5 @@
 $('.reviews-all-user').click(function() {
-    $('.user-reviews').toggle('slow');
+    $('.user-reviews').show();
     $('.top-5-user').hide(0);
     $('.wishlist-user').hide(0);
     $('.freundschaftsanfragen-list').hide(0);
@@ -7,14 +7,14 @@ $('.reviews-all-user').click(function() {
 
 
 $('.wishlist').click(function() {
-    $('.wishlist-user').toggle('slow');
+    $('.wishlist-user').show();
     $('.user-reviews').hide(0);
     $('.top-5-user').hide(0);
     $('.freundschaftsanfragen-list').hide(0);
 });
 
 $('.Freundschaftsanfragen').click(function(){
-    $('.freundschaftsanfragen-list').toggle('slow');
+    $('.freundschaftsanfragen-list').show();
     $('.top-5-user').hide(0);
     $('.wishlist-user').hide(0);
     $('.user-reviews').hide(0);
