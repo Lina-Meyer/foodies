@@ -63,11 +63,13 @@ class RestaurantsController < ApplicationController
     end
 
 
+
+
     if params[:city].present?
 
       # @restaurants = @restaurants_pure(city: params[:city])
       @restaurants_ohne = @restaurants_ohne_doubles.select do |restaurant|
-        restaurant.city == params[:city]
+        restaurant.city.casecmp(params[:city].strip) == 0
       end
       # @restaurants = @restaurants_list.where(city: params[:city])
     else
@@ -78,7 +80,7 @@ class RestaurantsController < ApplicationController
 
       # @restaurants = @restaurants_pure(city: params[:city])
       @restaurants_mit = @restaurants_doubles.select do |restaurant|
-        restaurant.city == params[:city]
+        restaurant.city.casecmp(params[:city].strip) == 0
       end
       # @restaurants = @restaurants_list.where(city: params[:city])
     else
