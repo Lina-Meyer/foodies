@@ -19,74 +19,180 @@
   <!-- <div class="row"> -->
     <div class="cities-photos">
       <div class="city1">
-        <%= link_to image_tag('Vienna.jpg', class:"intro-image"), restaurants_path()
-       %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Wien",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Vienna.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Vienna</h1>
+          <h1>Wien</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Zurich.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Zürich",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Zurich.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Zurich</h1>
+          <h1>Zürich</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Auckland.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Auckland",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Auckland.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Auckland</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('munich.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "München",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('munich.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Munich</h1>
+          <h1>München</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Vancouver.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Vancouver",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Vancouver.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Vancouver</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Dusseldorf.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Düsseldorf",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Dusseldorf.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Dusseldorf</h1>
+          <h1>Düsseldorf</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Frankfurt.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Frankfurt",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Frankfurt.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Frankfurt</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Genf.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Genf",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Genf.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Geneva</h1>
+          <h1>Genf</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Kopenhagen.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Kopenhagen",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Kopenhagen.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
-          <h1>Copenhagen</h1>
+          <h1>Kopenhagen</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Basel.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Basel",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Basel.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Basel</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Sydney1.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Sydney",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Sydney1.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Sydney</h1>
         </div>
       </div>
+
       <div class="city1">
-        <%= link_to image_tag('Amsterdam.jpg', class:"intro-image"), restaurants_path %>
+        <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :city,
+        params[:city], :value => "Amsterdam",
+        class:"form-control"
+        %>
+        <%= button_tag :submit do %>
+          <%= image_tag('Amsterdam.jpg', class:"intro-image") %>
+        <% end %>
+      <% end %>
         <div class="citytext1">
           <h1>Amsterdam</h1>
         </div>
