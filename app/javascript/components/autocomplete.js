@@ -105,7 +105,10 @@ function callback(place, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
 
     document.getElementById('phone').innerHTML = place.formatted_phone_number
-    document.getElementById('website').innerHTML = place.website
+    // document.getElementById('website').str = place.website
+    var str = place.website
+    var result = str.link(str)
+    document.getElementById('website').innerHTML = result
     var open = document.getElementById('opening-hours')
     var website = place.website
 
