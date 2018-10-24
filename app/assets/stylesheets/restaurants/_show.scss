@@ -21,7 +21,7 @@
 }
 
 .zeile1 {
-  padding-top: 5px;
+  padding-top: 18px;
   display:flex;
   justify-content: space-between;
   .zeile2 {
@@ -60,7 +60,9 @@
 
   .fas {
     color: $red;
+    text-decoration: none;
   }
+
   .Ort {
     display: flex;
     .marker {
@@ -80,6 +82,12 @@
     .marker {
       padding-right:20px;
     }
+    a {
+      color: #333333;
+    }
+    a:hover {
+      text-decoration: none;
+    }
   }
 
   .Öffnungszeiten {
@@ -92,6 +100,7 @@
 
 .line-show {
   border-bottom: 1px solid rgba(1, 1, 1, 0.18);
+  margin-top: 4vh;
 }
 
 .reviews-show {
@@ -178,6 +187,8 @@
     color: $red;
   }
 }
+
+
 
 // .data-show {
 //   display: flex;
