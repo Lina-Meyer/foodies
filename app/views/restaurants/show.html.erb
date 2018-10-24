@@ -27,7 +27,7 @@
       <div class="text-show">
         <div class="Ort">
           <div class="marker">
-            <p><i class="fas fa-map-marker-alt"></i></p>
+            <%=  link_to "", ('https://www.google.com/maps/dir/?api=1&destination='+@restaurant_show.first.address), { :class=>"fas fa-map-marker-alt" }%>
           </div>
           <div class="text">
             <p> <%= @restaurant_show.first.address%>, <%= @restaurant_show.first.zipcode %> <%= @restaurant_show.first.city %></p>
@@ -72,22 +72,11 @@
     </div>
   </div>
   <div class="line-show"></div>
-  <div class="quick-facts">
-    <div class="show-directions">
-      <%= link_to "", ('https://www.google.com/maps/dir/?api=1&destination='+@restaurant_show.first.address), { :class=>"fas fa-map-marker-alt" } %>
-    </div>
-    <div class="wishlist">
-      <i class="fas fa-heart"></i>
-    </div>
-    <div class="show-phone">
-      <i class="fas fa-phone"></i>
-    </div>
-  </div>
-  <div class="line-show"></div>
-</div>
 
+</div>
 <div class="wrapper-show-rating">
   <!-- <h2 class="review-header">Reviews</h2> -->
+  <h2>Reviews</h2>
   <% @restaurant_show.each do |restaurant| %>
     <% if @friend_ids.include?(restaurant.user_ids[0]) == true %>
       <% restaurant.ratings.each do |r| %>

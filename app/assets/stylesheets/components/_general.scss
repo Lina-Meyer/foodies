@@ -17,8 +17,17 @@
 }
 
 .wrapper-show-rating {
-  padding: 2.5vh 2.5vh;
+  padding: 0vh 2.5vh;
   padding-bottom: 70px;
+
+  h2 {
+    font-family: "Montserrat", "sans-serif";
+    color: black;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 23px;
+  }
 }
 
 
